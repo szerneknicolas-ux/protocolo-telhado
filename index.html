@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Protocolo Limpeza de Telhado Lucrativo</title>
-  <meta name="description" content="Descubra como faturar mais de 1 salário por dia limpando telhados com o Soft Wash, mesmo começando do zero."/>
+  <title>Telhado Lucrativo · Aulas do Método Americano de limpeza de telhados</title>
+  <meta name="description" content="Aprenda em aulas em vídeo o Método Americano de limpeza de telhados: sem lavadora de pressão, sem quebrar telha e com resultado que dura até 2 anos. Com Adriano Szernek, 12 anos de experiência."/>
   <meta name="theme-color" content="#fbfbfd"/>
 
   <!-- Meta Pixel Code -->
@@ -69,9 +69,7 @@
       --brand-soft:  #fff4ea;
 
       --red:         #D70015;
-      --red-soft:    #fff1f2;
       --green:       #1F7A35;
-      --green-soft:  #effaf2;
 
       --dark:        #0b0b0f;
       --dark-ink:    #f5f5f7;
@@ -116,6 +114,7 @@
     .container.mid    { max-width: 900px; }
 
     section { position: relative; padding: var(--section-y) 0; }
+    section > .container { position: relative; z-index: 1; }
 
     /* ═════════════════════════════════════════════
        TIPOGRAFIA
@@ -136,6 +135,7 @@
     }
     .eyebrow.red .dot { background: #ff3b30; box-shadow: 0 0 0 4px rgba(255,59,48,.18); }
     .eyebrow.red { color: #9f1d1d; }
+    .on-dark .eyebrow { color: var(--dark-ink); }
 
     .title {
       font-size: clamp(1.75rem, 3.6vw, 2.75rem);
@@ -145,7 +145,15 @@
       color: var(--ink);
       text-wrap: balance;
     }
-    .title.sm { font-size: clamp(1.5rem, 2.8vw, 2.15rem); }
+    .on-dark .title { color: #fff; }
+    .lead {
+      font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--ink-3);
+      margin-top: 18px;
+      text-wrap: pretty;
+    }
+    .on-dark .lead { color: var(--dark-ink-2); }
 
     .hl {
       background: linear-gradient(100deg, #EA580C 0%, #C2410C 100%);
@@ -156,6 +164,7 @@
       background: linear-gradient(100deg, #FDBA74 0%, #FB923C 100%);
       -webkit-background-clip: text; background-clip: text;
     }
+    .nowrap { white-space: nowrap; }
 
     .center { text-align: center; }
     .section-head { text-align: center; max-width: 820px; margin: 0 auto clamp(40px, 6vw, 64px); }
@@ -198,13 +207,10 @@
       .glass-dark { background: #1c1c22; -webkit-backdrop-filter: none; backdrop-filter: none; }
     }
 
-    /* Luzes ambiente atrás do vidro */
     .ambient { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .ambient i {
-      position: absolute; display: block; border-radius: 50%;
-      filter: blur(70px); opacity: .55;
-    }
-    section > .container { position: relative; z-index: 1; }
+    .ambient i { position: absolute; display: block; border-radius: 50%; filter: blur(70px); opacity: .55; }
+
+    .dark { background: var(--dark); color: var(--dark-ink); overflow: hidden; }
 
     /* ═════════════════════════════════════════════
        BOTÃO
@@ -214,7 +220,7 @@
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
       min-height: 60px; padding: 0 34px;
       border-radius: 999px;
-      font-family: inherit; font-size: 1.1875rem; font-weight: 800; letter-spacing: .01em;
+      font-family: inherit; font-size: 1.1875rem; font-weight: 800; letter-spacing: .005em;
       color: #fff;
       background: linear-gradient(180deg, #FB8A3C 0%, #EA580C 55%, #DC4F06 100%);
       box-shadow:
@@ -224,7 +230,7 @@
         0 14px 34px -8px rgba(234,88,12,.6);
       text-shadow: 0 1px 1px rgba(120,40,0,.25);
       transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s;
-      cursor: pointer; border: 0;
+      cursor: pointer; border: 0; white-space: nowrap;
       -webkit-tap-highlight-color: transparent;
     }
     .btn::after {
@@ -234,8 +240,7 @@
       animation: sheen 4.5s var(--ease) infinite 1.5s;
     }
     .btn svg { flex-shrink: 0; transition: transform .25s var(--ease); }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.05);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.08), 0 1px 2px rgba(120,40,0,.25), 0 20px 44px -10px rgba(234,88,12,.7); }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
     .btn:hover svg { transform: translateX(3px); }
     .btn:active { transform: scale(.98); }
     .btn.full { display: flex; width: 100%; }
@@ -245,22 +250,33 @@
       0%,100% { box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.08), 0 14px 34px -8px rgba(234,88,12,.55), 0 0 0 0 rgba(249,115,22,.35); }
       50%     { box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.08), 0 14px 34px -8px rgba(234,88,12,.55), 0 0 0 12px rgba(249,115,22,0); }
     }
+    .btn-note {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px;
+      margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--ink-3);
+    }
+    .btn-note span { display: inline-flex; align-items: center; gap: 6px; }
+    .on-dark .btn-note { color: var(--dark-ink-2); }
 
-    /* ═════════════════════════════════════════════
-       MOLDURAS DE IMAGEM
-    ═════════════════════════════════════════════ */
     .frame {
       background: #fff;
       border-radius: var(--radius-xl);
       overflow: hidden;
       box-shadow: 0 0 0 1px var(--line), 0 2px 4px rgba(0,0,0,.03), 0 30px 70px -30px rgba(40,20,5,.25);
     }
+    .check {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #FB8A3C, #EA580C);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 4px 10px -3px rgba(234,88,12,.55);
+    }
+    .check.green { background: linear-gradient(180deg, #34c759, #248a3d); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
+    .check.red   { background: linear-gradient(180deg, #ff453a, #d70015); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
 
     /* ═════════════════════════════════════════════
-       1 — HERO
+       HERO
     ═════════════════════════════════════════════ */
     #hero {
-      padding-top: clamp(40px, 7vw, 88px);
+      padding-top: clamp(36px, 6vw, 80px);
       padding-bottom: clamp(56px, 8vw, 96px);
       background:
         radial-gradient(60% 50% at 12% 0%, rgba(249,115,22,.20) 0%, rgba(249,115,22,0) 70%),
@@ -269,328 +285,229 @@
         var(--bg);
       text-align: center;
     }
-    #hero .eyebrow { font-size: 15px; font-weight: 700; color: #8a1c1c; max-width: 640px; }
     .hero-headline {
-      font-size: clamp(1.9rem, 4.6vw, 3.5rem);
+      font-size: clamp(1.9rem, 4.6vw, 3.4rem);
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -0.034em;
-      max-width: 940px;
+      max-width: 960px;
       margin: 0 auto;
       text-wrap: balance;
     }
-    .hero-visual {
+    #hero .lead { max-width: 700px; margin-left: auto; margin-right: auto; }
+
+    .before-after {
       position: relative;
-      max-width: 960px;
-      margin: clamp(36px, 6vw, 64px) auto 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      max-width: 980px; margin: clamp(32px, 5vw, 52px) auto 0;
+      padding: 8px;
+      border-radius: var(--radius-xl);
+      background: #fff;
+      box-shadow: 0 0 0 1px var(--line), 0 40px 80px -40px rgba(120,50,10,.45);
     }
-    .hero-visual::before {
-      content: ""; position: absolute; inset: 8% 6% -6%;
-      background: radial-gradient(closest-side, rgba(249,115,22,.35), rgba(249,115,22,0));
-      filter: blur(40px); z-index: -1;
+    .ba-item { position: relative; border-radius: calc(var(--radius-xl) - 8px); overflow: hidden; aspect-ratio: 1200 / 654; }
+    .ba-item img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-tag {
+      position: absolute; left: 14px; bottom: 14px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px 8px 12px; border-radius: 999px;
+      font-size: 14px; font-weight: 700; color: #fff;
+      background: rgba(20,14,10,.38);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+              backdrop-filter: blur(18px) saturate(160%);
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 8px 20px -8px rgba(0,0,0,.45);
     }
-    .hero-visual .frame { padding: clamp(8px, 1.5vw, 16px); }
-    .hero-visual img { border-radius: calc(var(--radius-xl) - 12px); }
+    .ba-tag i { width: 8px; height: 8px; border-radius: 50%; display: block; }
+    .ba-tag.antes i  { background: #ff453a; }
+    .ba-tag.depois i { background: #30D158; }
+    .ba-caption { margin-top: 14px; font-size: 14px; color: var(--ink-3); }
+
+    .hero-cta { margin-top: clamp(28px, 4vw, 40px); }
+
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      max-width: 900px; margin: clamp(36px, 5vw, 56px) auto 0;
+    }
+    .stat { border-radius: 22px; padding: 18px 14px; text-align: center; }
+    .stat b { display: block; font-size: clamp(1.4rem, 2.6vw, 1.85rem); font-weight: 800; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .stat span { display: block; margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--ink-3); line-height: 1.3; }
 
     /* ═════════════════════════════════════════════
-       2 — PROVA SOCIAL
+       DOR
     ═════════════════════════════════════════════ */
-    #prova-social { background: var(--surface); }
-    .testemunhos-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 960px;
-      margin: 0 auto;
+    #dor { background: var(--surface); }
+    .pain-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .pain-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      display: flex; gap: 16px; align-items: flex-start;
     }
+    .pain-card .q {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      background: #fff; box-shadow: 0 0 0 1px var(--line);
+      font-size: 22px; font-weight: 900; color: var(--brand-strong); line-height: 1;
+    }
+    .pain-card p { font-size: 1.125rem; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: var(--ink); }
+    .pain-close {
+      max-width: 760px; margin: clamp(36px, 5vw, 52px) auto 0; text-align: center;
+      font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 700; line-height: 1.4; letter-spacing: -0.02em; text-wrap: balance;
+    }
+
+    /* ═════════════════════════════════════════════
+       MECANISMO (escuro)
+    ═════════════════════════════════════════════ */
+    #mecanismo .ambient i:nth-child(1) { width: 620px; height: 620px; left: -200px; top: -120px; background: #F97316; opacity: .38; }
+    #mecanismo .ambient i:nth-child(2) { width: 500px; height: 500px; right: -160px; bottom: -120px; background: #ff3b30; opacity: .22; }
+    .mech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
+    .mech-copy p { font-size: 1.0625rem; line-height: 1.7; color: var(--dark-ink-2); margin-top: 16px; }
+    .mech-copy p strong { color: var(--dark-ink); font-weight: 700; }
+    .mech-copy h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-top: 36px; }
+
+    .vs {
+      border-radius: var(--radius-xl); overflow: hidden;
+    }
+    .vs-head, .vs-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; align-items: center; column-gap: 12px; }
+    .vs-head { padding: 22px 22px 14px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--dark-ink-2); }
+    .vs-head .us { color: var(--dark-brand); }
+    .vs-row { padding: 16px 22px; border-top: 1px solid rgba(255,255,255,.08); font-size: 15px; }
+    .vs-row .k { font-weight: 600; color: var(--dark-ink); padding-right: 10px; }
+    .vs-row .bad { color: #ff8a80; display: flex; align-items: center; gap: 8px; }
+    .vs-row .good { color: #7ee2a0; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .vs-row svg { flex-shrink: 0; }
+    .vs-foot {
+      padding: 20px 22px 24px; border-top: 1px solid rgba(255,255,255,.08);
+      font-size: 1.0625rem; font-weight: 700; line-height: 1.45; color: #fff;
+    }
+
+    /* ═════════════════════════════════════════════
+       PROVA
+    ═════════════════════════════════════════════ */
+    #prova { background: var(--bg-alt); }
+    .testemunhos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 960px; margin: 0 auto; }
     .testemunho {
-      background: #fff;
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
+      background: #fff; border-radius: var(--radius-md); padding: 10px 14px;
       box-shadow: 0 0 0 1px var(--line), 0 12px 30px -18px rgba(0,0,0,.25);
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
     }
-    .testemunho:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px var(--line), 0 22px 40px -20px rgba(0,0,0,.3); }
     .testemunho img { width: 100%; }
 
     /* ═════════════════════════════════════════════
-       3 — AGITAÇÃO
+       A CONTA
     ═════════════════════════════════════════════ */
-    #agitacao { background: var(--bg-alt); }
-    #agitacao .eyebrow { font-size: 15px; font-weight: 700; max-width: 620px; }
-    #agitacao .frame { max-width: 960px; margin: 0 auto; }
+    #conta { background: var(--surface); overflow: hidden; }
+    #conta .ambient i:nth-child(1) { width: 460px; height: 460px; right: -160px; top: 10%; background: #fdba74; opacity: .5; }
+    #conta .ambient i:nth-child(2) { width: 380px; height: 380px; left: -140px; bottom: 0; background: #fde68a; opacity: .5; }
+    .money { border-radius: var(--radius-xl); padding: clamp(14px, 2.5vw, 22px); max-width: 900px; margin: 0 auto; }
+    .money-row {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.1fr; align-items: center; gap: 10px;
+      padding: 18px clamp(10px, 2vw, 18px);
+      border-radius: 20px;
+    }
+    .money-row + .money-row { border-top: 1px solid rgba(0,0,0,.06); }
+    .money-row.head { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); padding-top: 10px; padding-bottom: 10px; }
+    .money-row .svc b { display: block; font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
+    .money-row .svc span { font-size: 14px; color: var(--ink-3); }
+    .money-row .num { font-size: 1.0625rem; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+    .money-row .profit { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; color: var(--green); font-variant-numeric: tabular-nums; }
+    .money-row .lbl { display: none; }
+    .money-punch {
+      max-width: 760px; margin: 36px auto 0; text-align: center;
+      font-size: clamp(1.25rem, 2.6vw, 1.75rem); font-weight: 800; line-height: 1.3; letter-spacing: -0.025em; text-wrap: balance;
+    }
+    .disclaimer { max-width: 680px; margin: 14px auto 0; text-align: center; font-size: 13px; line-height: 1.6; color: var(--ink-3); }
 
     /* ═════════════════════════════════════════════
-       3B — CHEGA DISSO (escuro)
+       AULAS
     ═════════════════════════════════════════════ */
-    .dark { background: var(--dark); color: var(--dark-ink); }
-    #nova-secao .ambient i:nth-child(1) { width: 520px; height: 520px; left: -120px; top: -80px; background: #F97316; opacity: .45; }
-    #nova-secao .ambient i:nth-child(2) { width: 460px; height: 460px; right: -120px; bottom: -120px; background: #ff3b30; opacity: .32; }
-    #nova-secao .ambient i:nth-child(3) { width: 300px; height: 300px; left: 45%; top: 40%; background: #fbbf24; opacity: .18; }
+    #aulas { background: var(--bg); }
+    .aulas-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+    .player {
+      position: relative; border-radius: var(--radius-xl); overflow: hidden;
+      aspect-ratio: 16 / 10; background: #111;
+      box-shadow: 0 0 0 1px var(--line), 0 40px 80px -36px rgba(0,0,0,.55);
+    }
+    .player img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05); }
+    .player::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%); }
+    .play {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+      width: 84px; height: 84px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.22);
+      -webkit-backdrop-filter: blur(20px) saturate(170%);
+              backdrop-filter: blur(20px) saturate(170%);
+      border: 1px solid rgba(255,255,255,.45);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 20px 40px -12px rgba(0,0,0,.5);
+    }
+    .player-bar {
+      position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 2;
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 16px; border-radius: 18px; color: #fff;
+      background: rgba(20,14,10,.35);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+              backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid rgba(255,255,255,.22);
+      font-size: 14px; font-weight: 600;
+    }
+    .player-bar .track { flex: 1; height: 4px; border-radius: 4px; background: rgba(255,255,255,.3); overflow: hidden; }
+    .player-bar .track i { display: block; width: 36%; height: 100%; background: #fff; border-radius: 4px; }
 
-    .chega-card {
-      max-width: 720px; margin: 0 auto;
-      border-radius: var(--radius-xl);
-      padding: clamp(36px, 6vw, 60px) clamp(22px, 5vw, 56px);
-      text-align: center;
-    }
-    .chip-red {
-      display: inline-block;
-      background: linear-gradient(180deg, #ff453a, #d70015);
-      color: #fff; font-size: 15px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase;
-      padding: 12px 26px; border-radius: 999px; margin-bottom: 28px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 30px -6px rgba(255,59,48,.6);
-    }
-    .chega-card .lead  { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 600; line-height: 1.55; color: var(--dark-ink); margin-bottom: 32px; }
-    .chega-card h2     { font-size: clamp(1.6rem, 3.4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; margin-bottom: 16px; }
-    .chega-card .q     { font-size: 1.0625rem; line-height: 1.7; color: var(--dark-ink-2); margin-bottom: 26px; }
-    .chega-card .q strong { color: var(--dark-brand); font-weight: 700; }
-    .chega-card .yes   { font-size: 1.15rem; font-weight: 700; line-height: 1.5; color: #fff; margin-bottom: 34px; }
-    .chega-card .yes span { color: #30D158; }
-    .chega-card .btn   { width: 100%; max-width: 400px; }
-    .note {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--dark-ink-2);
-    }
-    .note svg { flex-shrink: 0; }
-
-    /* ═════════════════════════════════════════════
-       5 — O QUE VAI APRENDER
-    ═════════════════════════════════════════════ */
-    #aprender { background: var(--bg); }
-    .learn-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .learn-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 26px 26px 28px;
-      box-shadow: 0 0 0 1px var(--line), 0 18px 40px -28px rgba(0,0,0,.25);
-      display: flex; flex-direction: column; gap: 18px;
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
-    }
-    .learn-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(249,115,22,.25), 0 26px 50px -28px rgba(234,88,12,.4); }
-    .icon-tile {
-      width: 72px; height: 72px; flex-shrink: 0;
-      border-radius: 20px; overflow: hidden; background: #fff;
-      box-shadow: 0 0 0 1px var(--line), 0 6px 16px -8px rgba(234,88,12,.35);
-    }
-    .icon-tile img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
-    .learn-card p { font-size: 1.0625rem; font-weight: 600; line-height: 1.45; color: var(--ink); letter-spacing: -0.01em; }
+    .learn-list { display: flex; flex-direction: column; gap: 2px; margin-top: 26px; }
+    .learn-row { display: flex; gap: 14px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .learn-row:last-child { border-bottom: 0; }
+    .learn-row .check { margin-top: 1px; }
+    .learn-row p { font-size: 1.0625rem; font-weight: 500; line-height: 1.45; }
+    .aulas-note { margin-top: 18px; font-size: 15px; font-weight: 600; color: var(--ink-3); display: flex; align-items: center; gap: 8px; }
 
     /* ═════════════════════════════════════════════
-       6 — O QUE VAI RECEBER (bento)
+       BÔNUS
     ═════════════════════════════════════════════ */
-    #receber { background: var(--bg-alt); }
-    .bento {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .bento-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+    #bonus { background: var(--bg-alt); }
+    .bonus-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 16px; }
+    .bonus-card {
+      background: #fff; border-radius: var(--radius-lg); overflow: hidden;
       box-shadow: 0 0 0 1px var(--line), 0 18px 40px -28px rgba(0,0,0,.25);
       display: flex; flex-direction: column;
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
     }
-    .bento-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px var(--line), 0 30px 60px -30px rgba(0,0,0,.3); }
-    .bento-card.wide { grid-column: 1 / -1; flex-direction: row; align-items: center; }
-    .bento-media { background: #fff; display: flex; align-items: center; justify-content: center; }
-    .bento-card .bento-media {
-      height: 190px; margin: 10px 10px 18px; border-radius: 20px;
+    .bonus-media {
+      height: 200px; margin: 10px 10px 0; border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
       background:
         radial-gradient(60% 80% at 50% 100%, rgba(249,115,22,.16), rgba(249,115,22,0) 70%),
         linear-gradient(180deg, #fff8f1, #fff1e4);
     }
-    .bento-card .bento-media img {
-      width: 128px; height: 128px; border-radius: 30px; padding: 10px; background: #fff;
-      box-shadow: 0 0 0 1px rgba(234,88,12,.08), 0 16px 30px -14px rgba(234,88,12,.45);
-      transition: transform .5s var(--ease);
+    .bonus-media img.icon { width: 120px; height: 120px; border-radius: 28px; padding: 10px; background: #fff; box-shadow: 0 0 0 1px rgba(234,88,12,.08), 0 16px 30px -14px rgba(234,88,12,.45); }
+    .bonus-media img.book { height: 180px; width: auto; filter: drop-shadow(0 18px 18px rgba(120,50,10,.28)); transform: rotate(-4deg); }
+    .bonus-text { padding: 20px 26px 28px; }
+    .tag {
+      display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--brand-text); background: var(--brand-soft);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 12px;
     }
-    .bento-card:hover .bento-media img { transform: translateY(-4px) rotate(-2deg); }
-    .bento-card.wide .bento-media { flex: 1.15; height: auto; margin: 0; border-radius: 0; background: #fff; }
-    .bento-card.wide .bento-media img { width: 100%; height: auto; border-radius: 0; padding: 0; box-shadow: none; transform: none; }
-    .bento-text { padding: 6px 28px 30px; }
-    .bento-card.wide .bento-text { flex: 1; padding: 40px 48px 40px 12px; }
-    .item-num {
-      display: inline-block;
-      font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--brand-text);
-      background: var(--brand-soft);
-      padding: 6px 12px; border-radius: 999px; margin-bottom: 14px;
-    }
-    .bento-text h3 { font-size: 1.25rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; }
-    .bento-card.wide .bento-text h3 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); }
-    .bento-text p { font-size: 1rem; line-height: 1.6; color: var(--ink-3); }
+    .bonus-text h3 { font-size: 1.2rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .bonus-text p { font-size: 1rem; line-height: 1.6; color: var(--ink-3); }
 
     /* ═════════════════════════════════════════════
-       7 — PARA QUEM É
+       PARA QUEM
     ═════════════════════════════════════════════ */
     #para-quem { background: var(--surface); }
-    .pq-card {
-      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); align-items: center;
-      background: var(--bg-alt);
-      border-radius: var(--radius-xl);
-      padding: clamp(18px, 3vw, 32px);
-    }
-    .pq-card .frame { border-radius: var(--radius-lg); box-shadow: 0 0 0 1px var(--line); }
-    .pq-list { display: flex; flex-direction: column; gap: 4px; padding-right: clamp(0px, 2vw, 16px); }
-    .pq-row {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .pq-row:last-child { border-bottom: 0; }
-    .check {
-      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #FB8A3C, #EA580C);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 4px 10px -3px rgba(234,88,12,.55);
-      margin-top: 1px;
-    }
-    .pq-row p { font-size: 1.0625rem; font-weight: 500; line-height: 1.45; color: var(--ink); }
-
-    /* ═════════════════════════════════════════════
-       8 — RECAPITULANDO
-    ═════════════════════════════════════════════ */
-    #recapitulando { background: var(--bg-alt); overflow: hidden; }
-    #recapitulando .ambient i:nth-child(1) { width: 420px; height: 420px; left: -140px; top: 10%; background: #fdba74; }
-    #recapitulando .ambient i:nth-child(2) { width: 380px; height: 380px; right: -120px; bottom: 0; background: #fde68a; }
-    .receipt {
-      border-radius: var(--radius-xl);
-      padding: clamp(28px, 5vw, 48px) clamp(22px, 5vw, 48px);
-    }
-    .receipt-title {
-      font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.025em;
-      text-align: center; margin-bottom: 28px; text-wrap: balance;
-    }
-    .recap-row {
-      display: flex; align-items: center; gap: 14px;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(0,0,0,.07);
-    }
-    .recap-row:last-child { border-bottom: 0; }
-    .recap-row .check { width: 26px; height: 26px; margin: 0; }
-    .recap-row p { flex: 1; font-size: 1.0625rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
-    .recap-p {
-      flex-shrink: 0; font-size: 1rem; font-weight: 600; color: var(--ink-3);
-      text-decoration: line-through; text-decoration-color: rgba(215,0,21,.7); text-decoration-thickness: 2px;
-      font-variant-numeric: tabular-nums;
-    }
-    .recap-deveria {
-      margin-top: 22px; padding-top: 24px;
-      border-top: 1.5px dashed rgba(0,0,0,.14);
-      text-align: center; font-size: clamp(1.15rem, 2.2vw, 1.4rem); font-weight: 800; letter-spacing: -0.02em;
-    }
-    .recap-deveria s { color: var(--red); text-decoration-thickness: 3px; }
-
-    /* ═════════════════════════════════════════════
-       OFERTA (compra1 + oferta-final)
-    ═════════════════════════════════════════════ */
-    .offer-headline {
-      font-size: clamp(1.5rem, 3.4vw, 2.5rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em;
-      text-align: center; max-width: 820px; margin: 0 auto clamp(36px, 5vw, 56px); text-wrap: balance;
-    }
-    .offer-grid {
-      display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(20px, 3vw, 32px); align-items: center;
-      max-width: 1000px; margin: 0 auto;
-    }
-    .product-float { position: relative; display: flex; justify-content: center; padding: 10px 0; }
-    .product-float::before {
-      content: ""; position: absolute; left: 12%; right: 12%; top: 15%; bottom: 5%;
-      background: radial-gradient(closest-side, rgba(249,115,22,.55), rgba(249,115,22,0));
-      filter: blur(30px); z-index: 0;
-    }
-    .product-float img {
-      position: relative; z-index: 1;
-      width: 100%; max-width: 400px;
-      transform: perspective(1200px) rotateY(-10deg) rotateX(3deg);
-      filter: drop-shadow(0 40px 40px rgba(0,0,0,.35)) drop-shadow(0 8px 12px rgba(0,0,0,.2));
-      animation: float 7s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform: perspective(1200px) rotateY(-10deg) rotateX(3deg) translateY(0); }
-      50%     { transform: perspective(1200px) rotateY(-8deg)  rotateX(2deg) translateY(-12px); }
-    }
-
-    .buy-box {
-      border-radius: var(--radius-xl);
-      padding: clamp(28px, 4vw, 40px) clamp(22px, 4vw, 36px);
-      text-align: center;
-    }
-    .buy-box-name { font-size: 1.25rem; font-weight: 800; line-height: 1.3; letter-spacing: -0.02em; }
-    .buy-divider { height: 1px; background: currentColor; opacity: .12; margin: 22px 0; }
-    .buy-de { font-size: 1.0625rem; font-weight: 600; opacity: .75; }
-    .buy-de s { color: #ff453a; opacity: 1; }
-    .buy-big {
-      font-size: clamp(3.4rem, 8vw, 4.5rem); font-weight: 900; line-height: 1; letter-spacing: -0.045em;
-      margin: 10px 0 8px; font-variant-numeric: tabular-nums;
-    }
-    .buy-avista { font-size: 1rem; opacity: .7; margin-bottom: 26px; }
-    .buy-badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .buy-badge-item { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; line-height: 1.3; opacity: .8; }
-    .buy-badge-item .bi {
-      width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      background: rgba(249,115,22,.12);
-    }
-
-    /* compra1 — escuro */
-    #compra1 { background: var(--dark); color: var(--dark-ink); overflow: hidden; }
-    #compra1 .ambient i:nth-child(1) { width: 640px; height: 640px; left: -200px; top: 20%; background: #F97316; opacity: .42; }
-    #compra1 .ambient i:nth-child(2) { width: 520px; height: 520px; right: -160px; top: -120px; background: #fb923c; opacity: .28; }
-    #compra1 .ambient i:nth-child(3) { width: 420px; height: 420px; right: 10%; bottom: -200px; background: #fbbf24; opacity: .2; }
-    #compra1 .offer-headline { color: #fff; }
-    #compra1 .buy-box-name span, #compra1 .buy-big { color: #fff; }
-    #compra1 .buy-big { background: linear-gradient(180deg, #fff 30%, #fed7aa 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    #compra1 .buy-box-name span { color: var(--dark-brand); }
-    #compra1 .buy-badge-item .bi { background: rgba(255,255,255,.08); }
-
-    /* oferta-final — claro */
-    #oferta-final { background: var(--bg); overflow: hidden; }
-    #oferta-final .ambient i:nth-child(1) { width: 560px; height: 560px; left: -160px; top: 0; background: #fb923c; opacity: .45; }
-    #oferta-final .ambient i:nth-child(2) { width: 480px; height: 480px; right: -140px; bottom: -80px; background: #fcd34d; opacity: .45; }
-    #oferta-final .ambient i:nth-child(3) { width: 360px; height: 360px; left: 40%; top: 30%; background: #fda4af; opacity: .25; }
-    #oferta-final .product-float img { filter: drop-shadow(0 40px 36px rgba(120,50,10,.28)) drop-shadow(0 8px 12px rgba(0,0,0,.12)); }
-    #oferta-final .buy-box-name span { color: var(--brand-text); }
-    #oferta-final .buy-big { color: var(--ink); }
-    #oferta-final .buy-de s { color: var(--red); }
-
-    /* ═════════════════════════════════════════════
-       ENTREGA
-    ═════════════════════════════════════════════ */
-    #entrega { background: var(--bg-alt); }
-    .entrega-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; counter-reset: step; }
-    .entrega-card {
-      position: relative;
-      background: #fff; border-radius: var(--radius-lg);
-      padding: 34px 28px 32px; text-align: left;
-      box-shadow: 0 0 0 1px var(--line), 0 18px 40px -28px rgba(0,0,0,.25);
-    }
-    .entrega-card::before {
-      counter-increment: step; content: "0" counter(step);
-      position: absolute; top: 26px; right: 28px;
-      font-size: 13px; font-weight: 700; color: var(--ink-3); letter-spacing: .05em;
-      font-variant-numeric: tabular-nums;
-    }
-    .entrega-icon {
-      width: 56px; height: 56px; border-radius: 16px; margin-bottom: 22px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--brand-soft);
-      box-shadow: inset 0 0 0 1px rgba(249,115,22,.15);
-    }
-    .entrega-card h3 { font-size: 1.0625rem; font-weight: 800; letter-spacing: .02em; color: var(--ink); margin-bottom: 10px; }
-    .entrega-card p { font-size: 1rem; line-height: 1.55; color: var(--ink-3); }
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 960px; margin: 0 auto; }
+    .fit-card { border-radius: var(--radius-lg); padding: 30px 28px; }
+    .fit-card.yes { background: linear-gradient(180deg, #f3fbf5, #fff); box-shadow: inset 0 0 0 1.5px rgba(36,138,61,.3); }
+    .fit-card.no  { background: var(--bg-alt); box-shadow: inset 0 0 0 1px var(--line); }
+    .fit-card h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .fit-card.yes h3 { color: var(--green); }
+    .fit-card.no h3  { color: #b0000f; }
+    .fit-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; }
+    .fit-row .check { width: 24px; height: 24px; margin-top: 1px; }
+    .fit-row p { font-size: 1.0625rem; line-height: 1.45; color: var(--ink-2); }
 
     /* ═════════════════════════════════════════════
        AUTORIDADE
     ═════════════════════════════════════════════ */
-    #autoridade-pai { background: var(--dark); color: var(--dark-ink); overflow: hidden; }
-    #autoridade-pai .ambient i:nth-child(1) { width: 700px; height: 700px; right: -200px; top: -100px; background: #ea580c; opacity: .4; }
-    #autoridade-pai .ambient i:nth-child(2) { width: 400px; height: 400px; left: -150px; bottom: -150px; background: #f97316; opacity: .22; }
+    #autoridade .ambient i:nth-child(1) { width: 700px; height: 700px; right: -200px; top: -100px; background: #ea580c; opacity: .4; }
+    #autoridade .ambient i:nth-child(2) { width: 400px; height: 400px; left: -150px; bottom: -150px; background: #f97316; opacity: .22; }
     .auth-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
     .auth-name {
       display: inline-flex; align-items: center; gap: 10px;
@@ -600,44 +517,80 @@
     .auth-name .dot { width: 8px; height: 8px; border-radius: 50%; background: #30D158; box-shadow: 0 0 0 4px rgba(48,209,88,.2); }
     .auth-copy h2 { font-size: clamp(1.75rem, 3.6vw, 2.75rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; color: #fff; margin-bottom: 26px; text-wrap: balance; }
     .auth-copy p { font-size: 1.0625rem; line-height: 1.7; color: var(--dark-ink-2); margin-bottom: 16px; }
-    .auth-copy p:last-child { color: var(--dark-ink); margin-bottom: 0; }
+    .auth-copy p.strong { color: #fff; font-weight: 700; font-size: 1.2rem; margin-bottom: 0; }
     .auth-photo { position: relative; }
     .auth-photo img { width: 100%; border-radius: var(--radius-xl); box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 50px 100px -30px rgba(234,88,12,.55); }
+    .auth-badges { position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; gap: 10px; }
+    .auth-badges div { flex: 1; border-radius: 20px; padding: 12px 14px; text-align: center; }
+    .auth-badges b { display: block; font-size: 1.35rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .auth-badges span { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85); }
 
     /* ═════════════════════════════════════════════
-       DUAS OPÇÕES
+       OFERTA
     ═════════════════════════════════════════════ */
-    #opcoes { background: var(--surface); }
-    .op-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .op-card {
-      border-radius: var(--radius-lg); padding: 30px 28px;
-      background: var(--bg-alt);
-      box-shadow: inset 0 0 0 1px var(--line);
+    #oferta { background: var(--bg); overflow: hidden; }
+    #oferta .ambient i:nth-child(1) { width: 560px; height: 560px; left: -160px; top: 0; background: #fb923c; opacity: .45; }
+    #oferta .ambient i:nth-child(2) { width: 480px; height: 480px; right: -140px; bottom: -80px; background: #fcd34d; opacity: .45; }
+    #oferta .ambient i:nth-child(3) { width: 360px; height: 360px; left: 40%; top: 30%; background: #fda4af; opacity: .25; }
+    .offer-head { text-align: center; max-width: 760px; margin: 0 auto clamp(32px, 5vw, 48px); }
+    .buy-box {
+      max-width: 560px; margin: 0 auto;
+      border-radius: var(--radius-xl);
+      padding: clamp(28px, 4vw, 40px) clamp(22px, 4vw, 40px);
     }
-    .op-card.op-boa {
-      background: linear-gradient(180deg, #f3fbf5, #fff);
-      box-shadow: inset 0 0 0 1.5px rgba(36,138,61,.35), 0 24px 50px -28px rgba(36,138,61,.45);
+    .buy-name { text-align: center; font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; }
+    .buy-name span { display: block; font-size: 15px; font-weight: 600; color: var(--ink-3); letter-spacing: 0; margin-top: 4px; }
+    .stack { margin: 24px 0; }
+    .stack-row { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,.06); }
+    .stack-row:last-child { border-bottom: 0; }
+    .stack-row .check { width: 24px; height: 24px; margin-top: 1px; }
+    .stack-row p { font-size: 1.0625rem; font-weight: 600; line-height: 1.4; }
+    .stack-row p small { display: block; font-size: 14px; font-weight: 500; color: var(--ink-3); }
+    .price { text-align: center; padding-top: 22px; border-top: 1.5px dashed rgba(0,0,0,.14); }
+    .price .small { font-size: 15px; font-weight: 600; color: var(--ink-3); }
+    .price .big { font-size: clamp(3.6rem, 9vw, 4.75rem); font-weight: 900; line-height: 1; letter-spacing: -0.05em; margin: 6px 0 6px; font-variant-numeric: tabular-nums; }
+    .price .big sup { font-size: .4em; vertical-align: .95em; letter-spacing: 0; margin-right: 4px; }
+    .price .how { font-size: 15px; color: var(--ink-3); margin-bottom: 24px; }
+    .trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; padding-top: 22px; border-top: 1px solid rgba(0,0,0,.06); }
+    .trust div { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; line-height: 1.3; color: var(--ink-2); text-align: center; }
+    .trust .bi { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(249,115,22,.12); }
+
+    /* ═════════════════════════════════════════════
+       GARANTIA + COMO RECEBE
+    ═════════════════════════════════════════════ */
+    #garantia { background: var(--surface); }
+    .guarantee {
+      max-width: 860px; margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr; gap: clamp(24px, 4vw, 44px); align-items: center;
+      background: var(--bg-alt); border-radius: var(--radius-xl); padding: clamp(28px, 4vw, 44px);
     }
-    .op-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-    .op-ico { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .op-x { background: linear-gradient(180deg, #ff453a, #d70015); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
-    .op-c { background: linear-gradient(180deg, #34c759, #248a3d); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
-    .op-head h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
-    .op-ruim h3 { color: #b0000f; }
-    .op-boa h3  { color: var(--green); }
-    .op-card p  { font-size: 1.0625rem; line-height: 1.6; color: var(--ink-2); }
-    .op-close { text-align: center; max-width: 640px; margin: 40px auto 0; }
-    .op-close p { font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 700; line-height: 1.45; letter-spacing: -0.015em; }
-    .op-close p + p { margin-top: 12px; color: var(--green); }
+    .seal {
+      width: 150px; height: 150px; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 30% 25%, #ffb36b, #ea580c 70%);
+      color: #fff; text-align: center;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,.4), inset 0 0 0 8px rgba(255,255,255,.14), 0 24px 50px -18px rgba(234,88,12,.7);
+    }
+    .seal b { font-size: 3.2rem; font-weight: 900; line-height: .9; letter-spacing: -0.04em; }
+    .seal span { font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .guarantee h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+    .guarantee p { font-size: 1.0625rem; line-height: 1.65; color: var(--ink-2); margin-top: 12px; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; max-width: 960px; margin: clamp(56px, 8vw, 88px) auto 0; }
+    .step { background: var(--bg-alt); border-radius: var(--radius-lg); padding: 26px 24px; }
+    .step .n {
+      width: 36px; height: 36px; border-radius: 12px; margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: center;
+      background: #fff; box-shadow: 0 0 0 1px var(--line);
+      font-weight: 800; color: var(--brand-strong);
+    }
+    .step p { font-size: 1.0625rem; font-weight: 600; line-height: 1.45; }
 
     /* ═════════════════════════════════════════════
        FAQ
     ═════════════════════════════════════════════ */
     #faq { background: var(--bg-alt); }
-    .faq-list {
-      background: #fff; border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: 0 0 0 1px var(--line), 0 18px 40px -30px rgba(0,0,0,.25);
-    }
+    .faq-list { background: #fff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 18px 40px -30px rgba(0,0,0,.25); }
     .faq-item + .faq-item { border-top: 1px solid var(--line); }
     .faq-question {
       width: 100%; min-height: 64px;
@@ -645,19 +598,11 @@
       background: none; border: 0; cursor: pointer; text-align: left;
       padding: 20px 26px;
       font-family: inherit; font-size: 1.0625rem; font-weight: 600; color: var(--ink); letter-spacing: -0.01em;
-      transition: background .2s;
     }
     .faq-question:hover { background: rgba(0,0,0,.02); }
     .faq-question:focus-visible { outline-offset: -3px; border-radius: 0; }
-    .faq-plus {
-      flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
-      background: var(--bg-alt); position: relative;
-      transition: transform .35s var(--ease), background .25s;
-    }
-    .faq-plus::before, .faq-plus::after {
-      content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; border-radius: 2px;
-      background: var(--ink-2); transform: translate(-50%, -50%);
-    }
+    .faq-plus { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--bg-alt); position: relative; transition: transform .35s var(--ease), background .25s; }
+    .faq-plus::before, .faq-plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; border-radius: 2px; background: var(--ink-2); transform: translate(-50%, -50%); }
     .faq-plus::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .35s var(--ease); }
     .faq-item.open .faq-plus { background: var(--brand-soft); transform: rotate(180deg); }
     .faq-item.open .faq-plus::before, .faq-item.open .faq-plus::after { background: var(--brand-strong); }
@@ -666,44 +611,33 @@
     .faq-item.open .faq-answer { grid-template-rows: 1fr; }
     .faq-answer > div { overflow: hidden; }
     .faq-answer-inner { padding: 0 26px 24px; font-size: 1rem; line-height: 1.7; color: var(--ink-3); max-width: 760px; }
+    .faq-cta { text-align: center; margin-top: 40px; }
 
     /* ═════════════════════════════════════════════
        FOOTER
     ═════════════════════════════════════════════ */
-    #footer {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--line);
-      color: var(--ink-3);
-      padding: 44px 20px 140px;
-      text-align: center;
-      font-size: 13px; line-height: 1.7;
-    }
+    #footer { background: var(--bg-alt); border-top: 1px solid var(--line); color: var(--ink-3); padding: 44px 20px 140px; text-align: center; font-size: 13px; line-height: 1.7; }
     #footer .footer-inner { max-width: 760px; margin: 0 auto; }
     #footer strong { color: var(--ink); font-weight: 700; }
-    #footer .footer-divider { height: 1px; background: var(--line); margin: 22px auto; max-width: 760px; }
+    #footer .footer-divider { height: 1px; background: var(--line); margin: 22px auto; }
 
     /* ═════════════════════════════════════════════
-       BARRA FLUTUANTE (Liquid Glass)
+       BARRA FLUTUANTE
     ═════════════════════════════════════════════ */
     .float-cta {
       position: fixed; z-index: 100;
       left: 50%; bottom: max(14px, env(safe-area-inset-bottom));
       transform: translate(-50%, 140%);
-      width: min(560px, calc(100% - 24px));
+      width: min(520px, calc(100% - 24px));
       display: flex; align-items: center; justify-content: space-between; gap: 14px;
-      padding: 8px 8px 8px 22px;
-      border-radius: 999px;
-      transition: transform .55s var(--ease), opacity .4s;
-      opacity: 0;
+      padding: 8px 8px 8px 22px; border-radius: 999px;
+      transition: transform .55s var(--ease), opacity .4s; opacity: 0;
     }
     .float-cta.show { transform: translate(-50%, 0); opacity: 1; }
-    .float-price { display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap; }
-    .float-price s { font-size: 12px; color: var(--ink-3); text-decoration-color: rgba(215,0,21,.7); }
-    .float-price b { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: tabular-nums; }
-    .float-cta .btn {
-      min-height: 52px; padding: 0 22px; font-size: 1.0625rem; white-space: nowrap;
-      background: linear-gradient(180deg, #E8681A 0%, #C9480A 55%, #B83C0A 100%);
-    }
+    .float-price { display: flex; flex-direction: column; line-height: 1.15; white-space: nowrap; }
+    .float-price small { font-size: 12px; font-weight: 600; color: var(--ink-3); }
+    .float-price b { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); }
+    .float-cta .btn { min-height: 52px; padding: 0 22px; font-size: 1.0625rem; background: linear-gradient(180deg, #E8681A 0%, #C9480A 55%, #B83C0A 100%); }
     .float-cta .btn::after { animation-duration: 5s; }
 
     /* ═════════════════════════════════════════════
@@ -725,48 +659,43 @@
        RESPONSIVO
     ═════════════════════════════════════════════ */
     @media (max-width: 900px) {
-      .learn-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .bento { grid-template-columns: 1fr; }
-      .bento-card.wide { flex-direction: column; }
-      .bento-card.wide .bento-text { padding: 6px 28px 30px; }
-      .bento-card .bento-media { height: 200px; }
-      .offer-grid, .auth-grid { grid-template-columns: 1fr; }
-      .offer-grid { max-width: 560px; }
+      .mech-grid, .aulas-grid, .auth-grid { grid-template-columns: 1fr; }
+      .bonus-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
       .auth-photo { max-width: 460px; margin: 0 auto; width: 100%; }
-      .entrega-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
-      .pq-card { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
       body { font-size: 16px; }
       .container { padding: 0 16px; }
-      #hero .eyebrow, #agitacao .eyebrow { border-radius: 20px; font-size: 14px; padding: 10px 16px 10px 14px; }
-      .hero-visual .frame { border-radius: 24px; padding: 6px; }
-      .hero-visual img { border-radius: 18px; }
-      .frame { border-radius: 24px; }
-      .testemunhos-grid { grid-template-columns: 1fr; gap: 12px; }
-      .learn-grid { grid-template-columns: 1fr; gap: 12px; }
-      .learn-card { flex-direction: row; align-items: center; padding: 18px; gap: 16px; border-radius: 22px; }
-      .icon-tile { width: 60px; height: 60px; border-radius: 16px; }
-      .learn-card p { font-size: 1rem; }
-      .bento-card, .entrega-card, .op-card { border-radius: 24px; }
-      .op-grid { grid-template-columns: 1fr; gap: 12px; }
-      .pq-card { border-radius: 28px; padding: 14px 14px 8px; }
-      .pq-list { padding: 0 6px; }
-      .pq-row p, .recap-row p { font-size: 1rem; }
-      .chega-card, .receipt, .buy-box { border-radius: 28px; }
-      .product-float img { max-width: 280px; }
-      .faq-question { padding: 18px 18px; font-size: 1rem; }
-      .faq-answer-inner { padding: 0 18px 20px; }
-      .btn { white-space: nowrap; padding: 0 18px; letter-spacing: -0.005em; }
+      .eyebrow { border-radius: 18px; font-size: 13px; }
+      .before-after { gap: 6px; padding: 6px; border-radius: 26px; }
+      .ba-item { border-radius: 20px; aspect-ratio: 4 / 5; }
+      .ba-tag { left: 8px; bottom: 8px; font-size: 12px; padding: 6px 10px 6px 9px; }
+      .pain-grid, .fit-grid, .testemunhos-grid, .steps { grid-template-columns: 1fr; gap: 12px; }
+      .pain-card { padding: 20px; border-radius: 22px; }
+      .pain-card p { font-size: 1.0625rem; }
+      .vs-head, .vs-row { grid-template-columns: 1fr .9fr .9fr; padding-left: 16px; padding-right: 16px; font-size: 14px; }
+      .vs-head { font-size: 11px; }
+      .vs-row svg { display: none; }
+      .money-row { grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+      .money-row.head { display: none; }
+      .money-row .svc { grid-column: 1 / -1; }
+      .money-row .lbl { display: block; font-size: 12px; font-weight: 600; color: var(--ink-3); }
+      .money-row .cost { display: none; }
+      .guarantee { grid-template-columns: 1fr; text-align: center; }
+      .seal { margin: 0 auto; width: 128px; height: 128px; }
+      .btn { padding: 0 20px; font-size: 1.125rem; }
       .btn svg { display: none; }
       .float-cta { padding: 6px 6px 6px 18px; gap: 10px; }
-      .float-cta .btn { padding: 0 16px; font-size: 1rem; letter-spacing: 0; }
+      .float-cta .btn { padding: 0 16px; font-size: 1rem; }
       .float-price b { font-size: 1.2rem; }
+      .faq-question { padding: 18px; font-size: 1rem; }
+      .faq-answer-inner { padding: 0 18px 20px; }
+      .auth-badges b { font-size: 1.1rem; }
     }
-
     @media (max-width: 360px) {
-      .btn { font-size: 1.0625rem; }
+      .btn { font-size: 1rem; }
       .float-cta .btn { font-size: .9375rem; padding: 0 12px; }
     }
   </style>
@@ -774,164 +703,223 @@
 <body>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 1 — HERO
+     HERO — GANCHO
 ════════════════════════════════════════ -->
 <section id="hero">
   <div class="container">
-    <p class="eyebrow red glass"><span class="dot" aria-hidden="true"></span>Você trabalha o mês inteiro e quando chega no dia 20 já não sobrou nada?</p>
+    <p class="eyebrow glass"><span class="dot" aria-hidden="true"></span>Método Americano de limpeza de telhado · aulas em vídeo</p>
 
     <h1 class="hero-headline">
-      Descubra como fazer <span class="hl">1&nbsp;salário mínimo por dia</span> com o protocolo Limpeza de Telhado Lucrativo, mesmo que você nunca tenha trabalhado com isso antes.
+      Aprenda a limpar telhado do jeito que deixa ele limpo por <span class="hl nowrap">2 anos</span>, e que o cliente paga <span class="hl nowrap">mais de R$1.000</span> pra ter
     </h1>
+    <p class="lead">Sem lavadora de pressão, sem quebrar telha e sem precisar de experiência. Quem ensina é o Adriano, que faz isso há 12 anos em Balneário Camboriú.</p>
 
-    <div class="hero-visual">
-      <div class="frame">
-        <img src="antes-e-depois.png" alt="Antes e Depois" width="1408" height="768" fetchpriority="high"/>
-      </div>
+    <div class="before-after">
+      <figure class="ba-item">
+        <img src="ui/telhado-antes.jpg" alt="Telhado escuro, coberto de manchas pretas e musgo, antes da limpeza" width="1200" height="654" fetchpriority="high"/>
+        <figcaption class="ba-tag antes"><i aria-hidden="true"></i>Antes</figcaption>
+      </figure>
+      <figure class="ba-item">
+        <img src="ui/telhado-depois.jpg" alt="O mesmo telhado limpo, com a cor original das telhas, depois do Método Americano" width="1200" height="654" fetchpriority="high"/>
+        <figcaption class="ba-tag depois"><i aria-hidden="true"></i>Depois</figcaption>
+      </figure>
     </div>
-  </div>
-</section>
+    <p class="ba-caption">Serviço feito pelo Adriano em Santa Catarina.</p>
 
-<!-- ════════════════════════════════════════
-     SEÇÃO 2 — PROVA SOCIAL
-════════════════════════════════════════ -->
-<section id="prova-social">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Resultados Reais</span>
-      <h2 class="title reveal d1">Nesse protocolo além de você aprender a <span class="hl">faturar mais de 1 salário mínimo por dia,</span> você também aprende a deixar os seus clientes super satisfeitos</h2>
-    </div>
-
-    <div class="testemunhos-grid">
-      <div class="testemunho reveal"><img src="1.png" alt="Testemunho 1" width="600" height="200" loading="lazy" decoding="async"/></div>
-      <div class="testemunho reveal d1"><img src="2.png" alt="Testemunho 2" width="600" height="200" loading="lazy" decoding="async"/></div>
-      <div class="testemunho reveal d2"><img src="3.png" alt="Testemunho 3" width="600" height="200" loading="lazy" decoding="async"/></div>
-      <div class="testemunho reveal d3"><img src="4.png" alt="Testemunho 4" width="600" height="200" loading="lazy" decoding="async"/></div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SEÇÃO 3 — AGITAÇÃO / DOR
-════════════════════════════════════════ -->
-<section id="agitacao">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow red glass reveal"><span class="dot" aria-hidden="true"></span>Eu sei... você não aguenta mais chegar no dia 20 e já não ter mais dinheiro</span>
-      <h2 class="title reveal d1">e sofre com pensamentos como...</h2>
-    </div>
-
-    <div class="frame reveal d2">
-      <img src="img-homem-triste.png" alt="Homem triste" width="1920" height="1080" loading="lazy" decoding="async"/>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SEÇÃO 3B — CHEGA DISSO
-════════════════════════════════════════ -->
-<section id="nova-secao" class="dark on-dark" style="overflow:hidden;">
-  <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="container">
-    <div class="chega-card glass-dark reveal">
-      <span class="chip-red">Chega disso!</span>
-      <p class="lead">Você não aguenta mais trabalhar tanto e chegar no dia 20 já com o dinheiro acabado...</p>
-      <h2>Agora eu te pergunto:</h2>
-      <p class="q">Se você pudesse mudar de vida com um protocolo que pode te gerar mais de <strong>1 salário mínimo por dia</strong> e nunca mais ficar zerado no fim do mês, você acessaria?</p>
-      <p class="yes">Se a sua resposta for <span>"SIM"</span>, então o Protocolo Limpeza de Telhado Lucrativo é para você!</p>
-      <a href="#oferta-final" class="btn breathe">QUERO MEU PROTOCOLO
+    <div class="hero-cta">
+      <a href="#oferta" class="btn breathe" data-checkout>Quero assistir às aulas
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="note">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#30D158"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Acesso imediato · Compra 100% segura
-      </p>
+      <div class="btn-note"><span>R$67</span><span>·</span><span>Acesso na hora</span><span>·</span><span>7 dias de garantia</span></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat glass"><b>12 anos</b><span>limpando telhado</span></div>
+      <div class="stat glass"><b>+2.500</b><span>telhados limpos</span></div>
+      <div class="stat glass"><b>5 aulas</b><span>gravadas na prática</span></div>
+      <div class="stat glass"><b>7 dias</b><span>de garantia</span></div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 5 — O QUE VAI APRENDER
+     EXPOSIÇÃO — DOR
 ════════════════════════════════════════ -->
-<section id="aprender">
+<section id="dor">
   <div class="container">
     <div class="section-head">
-      <p class="title sm reveal">com o <span class="hl">Protocolo Limpeza de Telhado Lucrativo</span> você vai:</p>
+      <span class="eyebrow red glass reveal"><span class="dot" aria-hidden="true"></span>Talvez você se reconheça em alguma dessas</span>
+      <h2 class="title reveal d1">Trabalho pesado você já tem. O que falta é ele <span class="hl">pagar direito.</span></h2>
     </div>
 
-    <div class="learn-grid">
-      <div class="learn-card reveal">
-        <div class="icon-tile"><img src="ui/soft-wash-limpeza.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <p>Dominar o Soft Wash e eliminar fungos, algas e musgos com resultado que dura até 2 anos</p>
+    <div class="pain-grid">
+      <div class="pain-card reveal"><span class="q" aria-hidden="true">“</span><p>Chega o dia 20 e o salário já foi embora.</p></div>
+      <div class="pain-card reveal d1"><span class="q" aria-hidden="true">“</span><p>Você pensa em trabalhar por conta, mas não sabe com o quê.</p></div>
+      <div class="pain-card reveal"><span class="q" aria-hidden="true">“</span><p>Todo negócio que aparece pede um dinheiro que você não tem.</p></div>
+      <div class="pain-card reveal d1"><span class="q" aria-hidden="true">“</span><p>E o que dá pra começar com pouco, ninguém paga bem.</p></div>
+    </div>
+
+    <p class="pain-close reveal">Agora olha pros telhados da sua rua. Quase todos estão escuros. <span class="hl">E quase ninguém sabe limpar direito.</span></p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     REALIDADE — MECANISMO
+════════════════════════════════════════ -->
+<section id="mecanismo" class="dark on-dark">
+  <div class="ambient" aria-hidden="true"><i></i><i></i></div>
+  <div class="container">
+    <div class="mech-grid">
+      <div class="mech-copy">
+        <span class="eyebrow glass-dark reveal"><span class="dot" aria-hidden="true"></span>Por que quase todo mundo faz errado</span>
+        <h2 class="title reveal d1">A mancha preta do telhado é viva. <span class="hl">Jato de água não mata ela.</span></h2>
+        <p class="reveal d2">Aquela mancha escura que escorre pela telha é uma bactéria. A lavadora de alta pressão tira a sujeira de cima, mas a bactéria continua lá. Em 3 a 6 meses o telhado está preto de novo, e ainda sobra telha quebrada e risco de infiltração.</p>
+        <p class="reveal d2">O cliente acha que foi enganado. <strong>E quem limpou fica com fama de serviço ruim.</strong></p>
+
+        <h3 class="reveal">O Método Americano faz o contrário</h3>
+        <p class="reveal">Ele nasceu na Flórida, onde o clima úmido é parecido com o do litoral brasileiro. Em vez de força, você aplica o produto certo com uma bomba costal, desce do telhado <strong>e ele vai clareando sozinho nas próximas 72 horas.</strong></p>
       </div>
-      <div class="learn-card reveal d1">
-        <div class="icon-tile"><img src="ui/familia.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <p>Dar uma vida muito melhor para a sua família e para quem você ama</p>
-      </div>
-      <div class="learn-card reveal d2">
-        <div class="icon-tile"><img src="ui/dinheiro-diario.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <p>Fazer mais de 1 salário mínimo por dia com esse protocolo</p>
-      </div>
-      <div class="learn-card reveal">
-        <div class="icon-tile"><img src="ui/precificacao.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <p>Saber quanto cobrar e parar de deixar dinheiro na mesa por medo de assustar o cliente</p>
-      </div>
-      <div class="learn-card reveal d1">
-        <div class="icon-tile"><img src="ui/crescimento-meta.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <p>Projetar R$12.000 a R$20.000 por mês, do zero ao primeiro R$5.000 em 90 dias</p>
-      </div>
-      <div class="learn-card reveal d2">
-        <div class="icon-tile"><img src="ui/casa-descanso.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <p>Ter tempo e energia para a família, sem a exaustão de trabalhar para o patrão</p>
+
+      <div class="vs glass-dark reveal d1">
+        <div class="vs-head"><span></span><span>Lavadora de pressão</span><span class="us">Método Americano</span></div>
+        <div class="vs-row"><span class="k">Volta a sujar em</span><span class="bad">3 a 6 meses</span><span class="good">2 a 3 anos</span></div>
+        <div class="vs-row"><span class="k">Quebra telha</span>
+          <span class="bad"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>Sim</span>
+          <span class="good"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Não</span></div>
+        <div class="vs-row"><span class="k">Risco de infiltração</span><span class="bad">Alto</span><span class="good">Nenhum</span></div>
+        <div class="vs-row"><span class="k">Tempo numa casa</span><span class="bad">3 a 5 h, pesado</span><span class="good">1 a 3 h</span></div>
+        <div class="vs-row"><span class="k">Equipamento</span><span class="bad">Lavadora e muita água</span><span class="good">Bomba costal</span></div>
+        <div class="vs-foot">Cliente que vê o telhado clarear sozinho não pechincha. <span class="hl">Ele chama o vizinho pra ver.</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 6 — O QUE VAI RECEBER
+     PROVA
 ════════════════════════════════════════ -->
-<section id="receber">
+<section id="prova">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>O que está incluso</span>
-      <h2 class="title reveal d1">Veja tudo o que você vai receber no <span class="hl">Protocolo Limpeza de Telhado Lucrativo</span></h2>
+      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Clientes do Adriano</span>
+      <h2 class="title reveal d1">O que o pessoal comenta depois do serviço</h2>
+      <p class="lead reveal d2">Comentários reais de clientes da Limpa Telha, em Santa Catarina.</p>
+    </div>
+    <div class="testemunhos-grid">
+      <div class="testemunho reveal"><img src="1.png" alt="Comentário de cliente: Que maravilhoso trabalho!" width="600" height="200" loading="lazy" decoding="async"/></div>
+      <div class="testemunho reveal d1"><img src="2.png" alt="Comentário de cliente elogiando a limpeza do telhado em Itajaí" width="600" height="200" loading="lazy" decoding="async"/></div>
+      <div class="testemunho reveal"><img src="3.png" alt="Comentário de cliente: um ano depois o telhado ainda sem sujeira" width="600" height="200" loading="lazy" decoding="async"/></div>
+      <div class="testemunho reveal d1"><img src="4.png" alt="Comentário de cliente: telhas limpas e sem danificação" width="600" height="200" loading="lazy" decoding="async"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     A CONTA
+════════════════════════════════════════ -->
+<section id="conta">
+  <div class="ambient" aria-hidden="true"><i></i><i></i></div>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Faz a conta com a gente</span>
+      <h2 class="title reveal d1">Quanto vale <span class="hl">um telhado limpo</span></h2>
     </div>
 
-    <div class="bento">
-      <article class="bento-card wide reveal">
-        <div class="bento-media"><img src="mockup-fundo-branco.png" alt="Protocolo PDF" width="1408" height="768" loading="lazy" decoding="async"/></div>
-        <div class="bento-text">
-          <span class="item-num">Item 01</span>
-          <h3>Protocolo Completo em PDF — Método Americano de Limpeza de Telhados</h3>
-          <p>O passo a passo completo de como executar o serviço do início ao fim, com o produto certo, o equipamento certo e o resultado garantido.</p>
+    <div class="money glass reveal">
+      <div class="money-row head"><span>Serviço</span><span>Cobrado</span><span>Custo</span><span>Sobra no bolso</span></div>
+      <div class="money-row">
+        <div class="svc"><b>Casa pequena, 80 m²</b><span>pouco suja · cerca de 2 horas</span></div>
+        <div class="num"><span class="lbl">Cobrado</span>R$720</div>
+        <div class="num cost"><span class="lbl">Custo</span>R$175</div>
+        <div class="profit"><span class="lbl">Sobra</span>R$545</div>
+      </div>
+      <div class="money-row">
+        <div class="svc"><b>Casa média, 150 m²</b><span>sujeira moderada · cerca de 3 horas</span></div>
+        <div class="num"><span class="lbl">Cobrado</span>R$1.350</div>
+        <div class="num cost"><span class="lbl">Custo</span>R$310</div>
+        <div class="profit"><span class="lbl">Sobra</span>R$1.040</div>
+      </div>
+      <div class="money-row">
+        <div class="svc"><b>Condomínio, 500 m²</b><span>cerca de 1 dia</span></div>
+        <div class="num"><span class="lbl">Cobrado</span>R$4.000</div>
+        <div class="num cost"><span class="lbl">Custo</span>R$980</div>
+        <div class="profit"><span class="lbl">Sobra</span>R$3.020</div>
+      </div>
+    </div>
+
+    <p class="money-punch reveal">Um serviço numa casa pequena já paga as aulas <span class="hl">8 vezes.</span></p>
+    <p class="disclaimer reveal">Valores médios cobrados pelo Adriano em Santa Catarina, já descontando produto, combustível e desgaste do equipamento. Preço e procura mudam de cidade pra cidade, então isso não é promessa de ganho.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     AS AULAS (CAIXA PRETA)
+     TODO: quando as aulas estiverem definidas, trocar a lista
+     abaixo pelos títulos reais e a imagem do player por um frame real.
+════════════════════════════════════════ -->
+<section id="aulas">
+  <div class="container">
+    <div class="aulas-grid">
+      <div class="player reveal">
+        <img src="ui/telhado-depois.jpg" alt="Prévia de uma aula gravada em um telhado limpo pelo Método Americano" width="1200" height="654" loading="lazy" decoding="async"/>
+        <span class="play" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+        <div class="player-bar" aria-hidden="true"><span>Aula prática</span><span class="track"><i></i></span><span>no telhado</span></div>
+      </div>
+
+      <div>
+        <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>O que você recebe</span>
+        <h2 class="title reveal d1">5 aulas em vídeo, <span class="hl">gravadas em cima do telhado</span></h2>
+        <p class="lead reveal d2">Nada de estúdio nem enrolação. É o Adriano mostrando o que ele faz, do jeito que ele faz, gravado pelo filho com o celular.</p>
+
+        <div class="learn-list">
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Por que a mancha preta volta, e como acabar com ela de vez</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>O kit pra começar, e qual bomba não comprar</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>O serviço completo, do chão ao telhado limpo</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Como medir sem subir e quanto cobrar por m²</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Onde achar os primeiros clientes na sua cidade</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Segurança: o equipamento e as regras que evitam acidente</p></div>
+        </div>
+        <p class="aulas-note reveal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Assiste pelo celular, no seu tempo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     BÔNUS
+════════════════════════════════════════ -->
+<section id="bonus">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Junto com as aulas</span>
+      <h2 class="title reveal d1">E você ainda leva <span class="hl">3 bônus</span></h2>
+    </div>
+    <div class="bonus-grid">
+      <article class="bonus-card reveal">
+        <div class="bonus-media"><img class="book" src="ui/mockup-livro.png" alt="Capa do e-book do Método Americano" width="624" height="719" loading="lazy" decoding="async"/></div>
+        <div class="bonus-text">
+          <span class="tag">Bônus 1</span>
+          <h3>E-book completo do Método Americano</h3>
+          <p>O guia em PDF com a lista de equipamentos, o plano dos primeiros 90 dias e os erros que fazem você refazer serviço de graça.</p>
         </div>
       </article>
-
-      <article class="bento-card reveal">
-        <div class="bento-media"><img src="ui/tabela-de-precificacao.png" alt="Tabela" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <div class="bento-text">
-          <span class="item-num">Item 02</span>
-          <h3>Tabela de Precificação por m²</h3>
-          <p>Você vai saber exatamente quanto cobrar em cada tipo de telhado antes de abrir a boca para o cliente, sem medo e sem chute.</p>
+      <article class="bonus-card reveal d1">
+        <div class="bonus-media"><img class="icon" src="ui/tabela-de-precificacao.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
+        <div class="bonus-text">
+          <span class="tag">Bônus 2</span>
+          <h3>Tabela de preço por m²</h3>
+          <p>Quanto cobrar em cada tipo de telhado e como medir sem subir, usando o fator de inclinação.</p>
         </div>
       </article>
-
-      <article class="bento-card reveal d1">
-        <div class="bento-media"><img src="ui/script-de-vendas.png" alt="Script" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <div class="bento-text">
-          <span class="item-num">Item 03</span>
-          <h3>Script de Vendas Pronto</h3>
-          <p>As palavras exatas para fechar o orçamento no mesmo dia e responder as 3 objeções mais comuns sem perder o cliente.</p>
-        </div>
-      </article>
-
-      <article class="bento-card reveal d2">
-        <div class="bento-media"><img src="ui/plano-de-90-dias.png" alt="Plano 90 Dias" width="320" height="320" loading="lazy" decoding="async"/></div>
-        <div class="bento-text">
-          <span class="item-num">Item 04</span>
-          <h3>Plano de 90 Dias</h3>
-          <p>Um plano dia a dia para sair do zero e faturar os primeiros R$5.000 sem depender de anúncio, seguidores ou experiência anterior.</p>
+      <article class="bonus-card reveal d2">
+        <div class="bonus-media"><img class="icon" src="ui/script-de-vendas.png" alt="" width="320" height="320" loading="lazy" decoding="async"/></div>
+        <div class="bonus-text">
+          <span class="tag">Bônus 3</span>
+          <h3>Roteiros prontos de abordagem</h3>
+          <p>O que falar no porta a porta e como responder “tá caro”, “vou pensar” e “achei mais barato”.</p>
         </div>
       </article>
     </div>
@@ -939,315 +927,161 @@
 </section>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 7 — PARA QUEM É
+     PARA QUEM É / NÃO É
 ════════════════════════════════════════ -->
 <section id="para-quem">
   <div class="container">
     <div class="section-head">
-      <h2 class="title sm reveal">O Protocolo Limpeza de Telhado Lucrativo é para você que:</h2>
+      <h2 class="title reveal">Pra quem é <span class="hl">(e pra quem não é)</span></h2>
     </div>
-
-    <div class="pq-card reveal">
-      <div class="frame"><img src="homem-cansado.png" alt="Homem cansado" width="1408" height="768" loading="lazy" decoding="async"/></div>
-      <div class="pq-list">
-        <div class="pq-row">
-          <span class="check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>trabalha o mês inteiro e sente que o dinheiro desaparece</p>
-        </div>
-        <div class="pq-row">
-          <span class="check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Todo mês promete que vai mudar de vida, mas continua na mesma correria</p>
-        </div>
-        <div class="pq-row">
-          <span class="check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>está cansado de serviço pesado e quer algo novo</p>
-        </div>
-        <div class="pq-row">
-          <span class="check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Tá procurando uma oportunidade pra mudar sua situação financeira</p>
-        </div>
-        <div class="pq-row">
-          <span class="check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>tem medo de continuar preso na mesma situação pelos próximos anos</p>
-        </div>
+    <div class="fit-grid">
+      <div class="fit-card yes reveal">
+        <h3>É pra você se</h3>
+        <div class="fit-row"><span class="check green" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Quer trabalhar por conta e começar com pouco dinheiro</p></div>
+        <div class="fit-row"><span class="check green" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Não tem medo de serviço braçal</p></div>
+        <div class="fit-row"><span class="check green" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Topa fazer o primeiro serviço na casa de um parente ou vizinho</p></div>
+        <div class="fit-row"><span class="check green" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Quer um serviço que o cliente chama de novo e indica</p></div>
+      </div>
+      <div class="fit-card no reveal d1">
+        <h3>Não é pra você se</h3>
+        <div class="fit-row"><span class="check red" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7L7 17" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span><p>Tem medo de altura e não quer subir em telhado nenhum</p></div>
+        <div class="fit-row"><span class="check red" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7L7 17" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span><p>Procura dinheiro sem trabalhar</p></div>
+        <div class="fit-row"><span class="check red" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7L7 17" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span><p>Não pretende usar equipamento de segurança</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 8 — RECAPITULANDO
+     AUTORIDADE
 ════════════════════════════════════════ -->
-<section id="recapitulando">
-  <div class="ambient" aria-hidden="true"><i></i><i></i></div>
-  <div class="container narrow">
-    <div class="center">
-      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Recapitulando</span>
-    </div>
-
-    <div class="receipt glass reveal d1">
-      <h2 class="receipt-title">Veja tudo o que você vai receber no <span class="hl">Protocolo Limpeza de Telhado Lucrativo</span></h2>
-
-      <div class="recap-rows">
-        <div class="recap-row">
-          <span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Protocolo Completo Soft Wash em PDF</p>
-          <span class="recap-p">R$97,00</span>
-        </div>
-        <div class="recap-row">
-          <span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Lista de Insumos e Fornecedores</p>
-          <span class="recap-p">R$47,00</span>
-        </div>
-        <div class="recap-row">
-          <span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Scripts de Abordagem e Fechamento</p>
-          <span class="recap-p">R$67,00</span>
-        </div>
-        <div class="recap-row">
-          <span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Tabela de Precificação Pronta</p>
-          <span class="recap-p">R$47,00</span>
-        </div>
-        <div class="recap-row">
-          <span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <p>Bônus: Como divulgar na sua cidade sem gastar</p>
-          <span class="recap-p">R$39,00</span>
-        </div>
-      </div>
-
-      <div class="recap-deveria">Tudo isso deveria custar: <s>R$297,00</s></div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SEÇÃO 9 — COMPRA 1
-════════════════════════════════════════ -->
-<section id="compra1" class="on-dark">
-  <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="container">
-    <h2 class="offer-headline reveal">Mas hoje você tem acesso ao Protocolo Limpeza de Telhado Lucrativo junto com todos os bônus por apenas:</h2>
-
-    <div class="offer-grid">
-      <div class="product-float reveal">
-        <img src="ui/mockup-livro.png" alt="Protocolo Limpeza de Telhado Lucrativo" width="624" height="719" loading="lazy" decoding="async"/>
-      </div>
-
-      <div class="buy-box glass-dark reveal d1">
-        <div class="buy-box-name">Protocolo Limpeza de Telhado<br><span>Lucrativo</span></div>
-        <div class="buy-divider"></div>
-        <div class="buy-de">De <s>R$297,00</s> por:</div>
-        <div class="buy-big">R$67,00</div>
-        <div class="buy-avista">ou parcele no cartão</div>
-        <a href="https://sun.eduzz.com/39VKO58KWR" class="btn full breathe">QUERO MEU PROTOCOLO
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="buy-divider"></div>
-        <div class="buy-badges">
-          <div class="buy-badge-item"><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5" stroke="#FB923C" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="#FB923C" stroke-width="2" stroke-linecap="round"/></svg></span>Compra<br>Segura</div>
-          <div class="buy-badge-item"><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#FB923C" stroke-width="2"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="#FB923C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Satisfação<br>Garantida</div>
-          <div class="buy-badge-item"><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5l7 2.8v5.4c0 4.3-3 7.7-7 8.8-4-1.1-7-4.5-7-8.8V6.3l7-2.8z" stroke="#FB923C" stroke-width="2" stroke-linejoin="round"/></svg></span>Privacidade<br>Protegida</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SEÇÃO — COMO FUNCIONA / ENTREGA
-════════════════════════════════════════ -->
-<section id="entrega">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="title sm reveal">Compre agora e receba seu acesso no e-mail imediatamente!</h2>
-    </div>
-    <div class="entrega-grid">
-      <div class="entrega-card reveal">
-        <div class="entrega-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#EA580C" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>FAÇA SUA COMPRA</h3>
-        <p>Em poucos minutos você recebe seu acesso na sua caixa de entrada.</p>
-      </div>
-      <div class="entrega-card reveal d1">
-        <div class="entrega-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 19h12a3 3 0 000-6 5 5 0 00-9.7-1.3A4 4 0 006 19z" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11v5m0 0l-2-2m2 2l2-2" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>BAIXE O MATERIAL</h3>
-        <p>Todo o material fica disponível para download instantâneo no seu celular ou computador.</p>
-      </div>
-      <div class="entrega-card reveal d2">
-        <div class="entrega-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#EA580C" stroke-width="2"/><path d="M8 12l3 3 5-6" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>TUDO PRONTO!</h3>
-        <p>Agora é só seguir o protocolo passo a passo e começar a faturar com limpeza de telhados!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SEÇÃO — AUTORIDADE (PAI)
-════════════════════════════════════════ -->
-<section id="autoridade-pai" class="on-dark">
+<section id="autoridade" class="dark on-dark">
   <div class="ambient" aria-hidden="true"><i></i><i></i></div>
   <div class="container">
     <div class="auth-grid">
       <div class="auth-copy">
         <h3 class="auth-name glass-dark reveal"><span class="dot" aria-hidden="true"></span>Adriano Szernek</h3>
-        <h2 class="reveal d1">É o criador do <span class="hl">Protocolo Limpeza de Telhado Lucrativo</span></h2>
-        <p class="reveal d2">Há mais de 12 anos eu trabalho com limpeza de telhados usando o Método Americano (Soft Wash) em Balneário Camboriú e região.</p>
-        <p class="reveal d2">Comecei do zero, sem experiência nenhuma, e fui aprendendo na prática o que funciona, o que evitar e como cobrar o preço certo pelo serviço certo.</p>
-        <p class="reveal d3">Agora chegou a sua vez de acessar o protocolo que eu levei mais de uma década para construir e começar a faturar com isso na sua cidade.</p>
+        <h2 class="reveal d1">Quem ensina é quem está <span class="hl">no telhado toda semana</span></h2>
+        <p class="reveal d2">“Eu limpo telhado há 12 anos em Balneário Camboriú. Comecei sem saber nada, errando e aprendendo na prática: o produto certo, o equipamento que aguenta e quanto cobrar sem espantar o cliente.</p>
+        <p class="reveal d2">Já passei de 2.500 telhados. Meu filho me convenceu a gravar tudo isso do jeito que eu faço no dia a dia, sem estúdio e sem texto decorado.”</p>
+        <p class="strong reveal d3">É isso que você vai assistir.</p>
       </div>
       <div class="auth-photo reveal d1">
-        <img src="foto-pai-fundo-laranja.png" alt="Adriano Szernek" width="1080" height="1080" loading="lazy" decoding="async"/>
+        <img src="ui/adriano.jpg" alt="Adriano Szernek, com a camiseta da Limpa Telha" width="900" height="900" loading="lazy" decoding="async"/>
+        <div class="auth-badges">
+          <div class="glass-dark"><b>12 anos</b><span>de experiência</span></div>
+          <div class="glass-dark"><b>+2.500</b><span>telhados limpos</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 10 — DUAS OPÇÕES
+     OFERTA
 ════════════════════════════════════════ -->
-<section id="opcoes">
-  <div class="container mid">
-    <div class="section-head">
-      <h2 class="title reveal">Agora, você tem duas opções</h2>
-    </div>
-
-    <div class="op-grid">
-      <div class="op-card op-ruim reveal">
-        <div class="op-head">
-          <span class="op-ico op-x" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7L7 17" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/></svg>
-          </span>
-          <h3>Opção 1</h3>
-        </div>
-        <p>Continuar acordando cedo para trabalhar para o patrão, trocar seu tempo por um salário fixo que não cresce e chegar em casa sem energia enquanto os anos passam.</p>
-      </div>
-
-      <div class="op-card op-boa reveal d1">
-        <div class="op-head">
-          <span class="op-ico op-c" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <h3>Opção 2</h3>
-        </div>
-        <p>Investir R$67, aprender o protocolo, fechar o primeiro cliente na sua cidade e começar a construir uma renda que é sua, sem depender de ninguém para receber no fim do mês.</p>
-      </div>
-    </div>
-
-    <div class="op-close reveal">
-      <p>Eu sei, e você também sabe... a Opção 2 é a mais inteligente e é a que você mais precisa.</p>
-      <p>Então toque no botão abaixo e garanta o seu acesso agora!</p>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SEÇÃO — OFERTA FINAL
-════════════════════════════════════════ -->
-<section id="oferta-final">
+<section id="oferta">
   <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="container">
-    <div class="offer-grid">
-      <div class="product-float reveal">
-        <img src="ui/mockup-livro.png" alt="Protocolo Limpeza de Telhado Lucrativo" width="624" height="719" loading="lazy" decoding="async"/>
+    <div class="offer-head">
+      <h2 class="title reveal">Um telhado pequeno vale R$720. <span class="hl">As aulas custam R$67.</span></h2>
+    </div>
+
+    <div class="buy-box glass reveal d1">
+      <div class="buy-name">Telhado Lucrativo<span>Aulas do Método Americano de limpeza de telhado</span></div>
+
+      <div class="stack">
+        <div class="stack-row"><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>5 aulas em vídeo gravadas na prática</p></div>
+        <div class="stack-row"><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Bônus 1: e-book completo do método</p></div>
+        <div class="stack-row"><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Bônus 2: tabela de preço por m²</p></div>
+        <div class="stack-row"><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Bônus 3: roteiros prontos de abordagem</p></div>
+        <div class="stack-row"><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Acesso pelo celular ou pelo computador</p></div>
       </div>
 
-      <div class="buy-box glass reveal d1">
-        <div class="buy-box-name">Protocolo Limpeza de Telhado<br><span>Lucrativo</span></div>
-        <div class="buy-divider"></div>
-        <div class="buy-de">De <s>R$297,00</s> por:</div>
-        <div class="buy-big">R$67,00</div>
-        <div class="buy-avista">ou parcele no cartão</div>
-        <a href="https://sun.eduzz.com/39VKO58KWR" class="btn full breathe">QUERO MEU PROTOCOLO
+      <div class="price">
+        <div class="small">Pagamento único</div>
+        <div class="big"><sup>R$</sup>67</div>
+        <div class="how">no Pix ou no cartão</div>
+        <a href="#oferta" class="btn full breathe" data-checkout>Quero assistir às aulas
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div class="buy-divider"></div>
-        <div class="buy-badges">
-          <div class="buy-badge-item"><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5" stroke="#EA580C" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/></svg></span>Compra<br>Segura</div>
-          <div class="buy-badge-item"><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#EA580C" stroke-width="2"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Satisfação<br>Garantida</div>
-          <div class="buy-badge-item"><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5l7 2.8v5.4c0 4.3-3 7.7-7 8.8-4-1.1-7-4.5-7-8.8V6.3l7-2.8z" stroke="#EA580C" stroke-width="2" stroke-linejoin="round"/></svg></span>Privacidade<br>Protegida</div>
-        </div>
+      </div>
+
+      <div class="trust">
+        <div><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5" stroke="#EA580C" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/></svg></span>Compra<br>segura</div>
+        <div><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z" stroke="#EA580C" stroke-width="2" stroke-linejoin="round"/></svg></span>Acesso<br>na hora</div>
+        <div><span class="bi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5l7 2.8v5.4c0 4.3-3 7.7-7 8.8-4-1.1-7-4.5-7-8.8V6.3l7-2.8z" stroke="#EA580C" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>7 dias de<br>garantia</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════
-     SEÇÃO 13 — FAQ
+     GARANTIA + COMO RECEBE
+════════════════════════════════════════ -->
+<section id="garantia">
+  <div class="container">
+    <div class="guarantee reveal">
+      <div class="seal" aria-hidden="true"><b>7</b><span>dias</span></div>
+      <div>
+        <h2>Assiste primeiro. <span class="hl">Decide depois.</span></h2>
+        <p>Você tem 7 dias pra entrar, assistir às aulas e ver se é pra você. Se não for, é só pedir o reembolso que o dinheiro volta inteiro, sem pergunta e sem burocracia.</p>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: clamp(56px, 8vw, 88px); margin-bottom: 0;">
+      <h2 class="title reveal" style="font-size: clamp(1.5rem, 2.8vw, 2.15rem);">Como você recebe</h2>
+    </div>
+    <div class="steps" style="margin-top: 32px;">
+      <div class="step reveal"><span class="n">1</span><p>Você paga no Pix ou no cartão</p></div>
+      <div class="step reveal d1"><span class="n">2</span><p>Recebe o acesso no seu e-mail na hora</p></div>
+      <div class="step reveal d2"><span class="n">3</span><p>Assiste pelo celular e já pode começar</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FAQ
 ════════════════════════════════════════ -->
 <section id="faq">
   <div class="container mid">
     <div class="section-head">
-      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Perguntas Frequentes</span>
-      <h2 class="title reveal d1">Ficou com alguma dúvida?</h2>
+      <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>Perguntas frequentes</span>
+      <h2 class="title reveal d1">Ficou alguma dúvida?</h2>
     </div>
 
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Preciso ter experiência prévia com limpeza de telhados?
-          <span class="faq-plus" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer"><div>
-          <div class="faq-answer-inner">Não. O protocolo foi criado exatamente para quem está começando do zero. O conteúdo explica tudo de forma simples, desde os insumos até como fechar o primeiro cliente.</div>
-        </div></div>
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Preciso ter experiência?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Não. As aulas começam do zero: o que suja o telhado, que equipamento comprar e como fazer o primeiro serviço.</div></div></div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Quanto preciso investir para começar o negócio?
-          <span class="faq-plus" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer"><div>
-          <div class="faq-answer-inner">O protocolo inclui a lista de equipamentos e insumos necessários para começar. É possível iniciar com um investimento baixo, sem precisar montar uma estrutura grande logo de cara.</div>
-        </div></div>
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quanto preciso investir pra começar?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">O kit básico (bomba costal, escada, balde e funil) fica entre R$580 e R$1.035, fora o produto e o equipamento de segurança. Nas aulas o Adriano mostra o que vale a pena comprar e o que é dinheiro jogado fora.</div></div></div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          O Soft Wash (Método Americano) funciona em qualquer tipo de telhado?
-          <span class="faq-plus" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer"><div>
-          <div class="faq-answer-inner">Sim. O protocolo ensina como adaptar o processo para diferentes tipos de telhado — cerâmico, fibrocimento, metálico e outros — com os produtos e diluições corretos para cada caso.</div>
-        </div></div>
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">É perigoso?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Trabalho em altura sempre tem risco. Por isso tem uma parte só de segurança, com os equipamentos obrigatórios e as regras que o Adriano segue em todo serviço, como nunca subir sozinho e nunca subir com o telhado molhado.</div></div></div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Como vou receber o material após a compra?
-          <span class="faq-plus" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer"><div>
-          <div class="faq-answer-inner">Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link de acesso. O material fica disponível para download no seu celular ou computador.</div>
-        </div></div>
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Funciona na minha cidade?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Todo lugar tem telhado sujo. Em cidade úmida ou no litoral ele suja mais rápido, então tem mais serviço e o cliente chama de novo mais cedo.</div></div></div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Tem garantia? E se eu não gostar?
-          <span class="faq-plus" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer"><div>
-          <div class="faq-answer-inner">Sim. Você tem 7 dias de garantia. Se dentro desse prazo você sentir que o material não foi o que esperava, basta entrar em contato e realizamos o reembolso completo, sem burocracia.</div>
-        </div></div>
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Como eu assisto às aulas?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Depois do pagamento você recebe um e-mail com o acesso à área de alunos. Dá pra assistir no celular ou no computador, no seu tempo.</div></div></div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Funciona em qualquer cidade do Brasil?
-          <span class="faq-plus" aria-hidden="true"></span>
-        </button>
-        <div class="faq-answer"><div>
-          <div class="faq-answer-inner">Sim. Limpeza de telhados tem demanda constante em praticamente toda cidade. O protocolo inclui dicas de como encontrar clientes na sua região independente de onde você mora.</div>
-        </div></div>
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">E se eu não gostar?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Você tem 7 dias de garantia. Se achar que não é pra você, pede o reembolso e recebe o dinheiro de volta inteiro.</div></div></div>
       </div>
+    </div>
+
+    <div class="faq-cta reveal">
+      <a href="#oferta" class="btn breathe" data-checkout>Quero assistir às aulas
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="btn-note"><span>R$67</span><span>·</span><span>Acesso na hora</span><span>·</span><span>7 dias de garantia</span></div>
     </div>
   </div>
 </section>
@@ -1257,28 +1091,27 @@
 ════════════════════════════════════════ -->
 <footer id="footer">
   <div class="footer-inner">
-    <p>
-      <strong>Protocolo Limpeza de Telhado Lucrativo</strong><br/>
-      Criado por Adriano Szernek · Balneário Camboriú, SC
-    </p>
+    <p><strong>Telhado Lucrativo</strong><br/>Aulas criadas por Adriano Szernek · Limpa Telha SC · Balneário Camboriú, SC</p>
     <div class="footer-divider"></div>
     <p>
-      Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.<br/>
-      A compra deste material não garante nenhum tipo de resultado. Os resultados mencionados são de pessoas reais e podem variar de acordo com o esforço e dedicação de cada um.<br/>
-      Fazemos todos os esforços para indicar claramente as provas e resultados apresentados.
+      Este site não é afiliado ao Facebook nem a qualquer entidade do Facebook.<br/>
+      Os valores mostrados são médias do trabalho do Adriano e não são promessa de ganho. O resultado de cada pessoa depende do esforço, da dedicação e da região onde trabalha.
     </p>
     <div class="footer-divider"></div>
-    <p>Copyright © 2025 · Todos os Direitos Reservados.</p>
+    <p>Copyright © 2026 · Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <!-- Barra flutuante Liquid Glass -->
 <div class="float-cta glass" id="floatCta" aria-hidden="true">
-  <div class="float-price"><s>R$297,00</s><b>R$67,00</b></div>
-  <a href="#oferta-final" class="btn" tabindex="-1">QUERO MEU PROTOCOLO</a>
+  <div class="float-price"><small>5 aulas + 3 bônus</small><b>R$67</b></div>
+  <a href="#oferta" class="btn" tabindex="-1" data-checkout>Quero assistir</a>
 </div>
 
 <script>
+  /* Link do checkout da Cakto. Enquanto estiver vazio, os botões levam até a oferta. */
+  const CHECKOUT_URL = '';
+
   function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
@@ -1293,6 +1126,14 @@
   }
 
   (function () {
+    // Botões de compra
+    if (CHECKOUT_URL) {
+      document.querySelectorAll('[data-checkout]').forEach(a => {
+        a.href = CHECKOUT_URL;
+        a.addEventListener('click', () => { if (window.fbq) fbq('track', 'InitiateCheckout'); });
+      });
+    }
+
     // Revelar ao rolar
     const els = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
@@ -1304,24 +1145,21 @@
       els.forEach(el => el.classList.add('in'));
     }
 
-    // Barra flutuante: aparece depois do hero, some quando uma caixa de compra está na tela
+    // Barra flutuante: aparece depois do hero e some quando a caixa de compra está na tela
     const bar = document.getElementById('floatCta');
     const barLink = bar.querySelector('a');
     const hero = document.getElementById('hero');
-    const buyBoxes = document.querySelectorAll('.buy-box');
+    const buyBox = document.querySelector('.buy-box');
+
     function update() {
       const vh = window.innerHeight;
       const pastHero = hero.getBoundingClientRect().bottom < 0;
-      const buyInView = [...buyBoxes].some(b => {
-        const r = b.getBoundingClientRect();
-        return r.top < vh && r.bottom > 0;
-      });
-      const show = pastHero && !buyInView;
+      const r = buyBox.getBoundingClientRect();
+      const show = pastHero && !(r.top < vh && r.bottom > 0);
       bar.classList.toggle('show', show);
       bar.setAttribute('aria-hidden', show ? 'false' : 'true');
       barLink.tabIndex = show ? 0 : -1;
     }
-
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
