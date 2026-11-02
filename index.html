@@ -290,10 +290,11 @@
       font-weight: 800;
       line-height: 1.04;
       letter-spacing: -0.04em;
-      max-width: 860px;
+      max-width: 1020px;
       margin: 0 auto;
       text-wrap: balance;
     }
+    .hero-headline .hl { display: inline-block; }
     #hero .lead { max-width: 700px; margin-left: auto; margin-right: auto; }
 
     .before-after {
@@ -322,6 +323,14 @@
     .ba-tag.antes i  { background: #ff453a; }
     .ba-tag.depois i { background: #30D158; }
     .ba-caption { margin-top: 14px; font-size: 14px; color: var(--ink-3); }
+    .on-dark .ba-caption { color: var(--dark-ink-2); }
+    .on-dark .before-after { background: rgba(255,255,255,.08); box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 40px 80px -40px rgba(0,0,0,.7); margin-top: clamp(40px, 6vw, 64px); }
+    .hero-photo {
+      max-width: 980px; margin: clamp(32px, 5vw, 52px) auto 0; padding: 8px;
+      border-radius: var(--radius-xl); background: #fff;
+      box-shadow: 0 0 0 1px var(--line), 0 40px 80px -40px rgba(120,50,10,.45);
+    }
+    .hero-photo img { width: 100%; border-radius: calc(var(--radius-xl) - 8px); aspect-ratio: 16 / 9; object-fit: cover; object-position: 70% 50%; }
 
     .hero-cta { margin-top: clamp(28px, 4vw, 40px); }
 
@@ -696,6 +705,8 @@
       .eyebrow { border-radius: 18px; font-size: 13px; }
       .before-after { gap: 6px; padding: 6px; border-radius: 26px; }
       .ba-item { border-radius: 20px; aspect-ratio: 4 / 5; }
+      .hero-photo { padding: 6px; border-radius: 26px; }
+      .hero-photo img { border-radius: 20px; aspect-ratio: 4 / 3; }
       .ba-tag { left: 8px; bottom: 8px; font-size: 12px; padding: 6px 10px 6px 9px; }
       .pain-grid, .fit-grid, .testemunhos-grid, .steps { grid-template-columns: 1fr; gap: 12px; }
       .pain-card { padding: 20px; border-radius: 22px; }
@@ -735,21 +746,12 @@
     <p class="eyebrow red glass"><span class="dot" aria-hidden="true"></span>Tá cansado de nunca ter grana no final do mês?</p>
 
     <h1 class="hero-headline">
-      Aprenda a ganhar <span class="hl nowrap">mais de R$1.000</span> por&nbsp;telhado
+      Aprenda a ganhar <span class="hl">mais de um salário&nbsp;mínimo</span> por&nbsp;telhado
     </h1>
     <p class="lead">Sem lavadora de pressão, sem quebrar telha e sem precisar de experiência.</p>
-
-    <div class="before-after">
-      <figure class="ba-item">
-        <img src="ui/telhado-antes.jpg" alt="Telhado escuro, coberto de manchas pretas e musgo, antes da limpeza" width="1200" height="654" fetchpriority="high"/>
-        <figcaption class="ba-tag antes"><i aria-hidden="true"></i>Antes</figcaption>
-      </figure>
-      <figure class="ba-item">
-        <img src="ui/telhado-depois.jpg" alt="O mesmo telhado limpo, com a cor original das telhas, depois do Protocolo Telhado Lucrativo" width="1200" height="654" fetchpriority="high"/>
-        <figcaption class="ba-tag depois"><i aria-hidden="true"></i>Depois</figcaption>
-      </figure>
+    <div class="hero-photo">
+      <img src="ui/telhado-dinheiro.jpg" alt="Maço de notas de 100 reais sobre um telhado limpo, em um dia de sol" width="1400" height="788" fetchpriority="high"/>
     </div>
-    <p class="ba-caption">Serviço feito pelo Adriano em Santa Catarina.</p>
 
     <div class="hero-cta">
       <a href="#oferta" class="btn breathe" data-checkout>Quero assistir às aulas
@@ -809,6 +811,19 @@
         <div class="vs-foot">Cliente que vê o telhado clarear sozinho não pechincha. <span class="hl">Ele chama o vizinho pra ver.</span></div>
       </div>
     </div>
+
+
+    <div class="before-after reveal">
+      <figure class="ba-item">
+        <img src="ui/telhado-antes.jpg" alt="Telhado escuro, coberto de manchas pretas e musgo, antes da limpeza" width="1200" height="654" loading="lazy" decoding="async"/>
+        <figcaption class="ba-tag antes"><i aria-hidden="true"></i>Antes</figcaption>
+      </figure>
+      <figure class="ba-item">
+        <img src="ui/telhado-depois.jpg" alt="O mesmo telhado limpo, com a cor original das telhas, depois do Protocolo Telhado Lucrativo" width="1200" height="654" loading="lazy" decoding="async"/>
+        <figcaption class="ba-tag depois"><i aria-hidden="true"></i>Depois</figcaption>
+      </figure>
+    </div>
+    <p class="ba-caption center reveal">Serviço feito pelo Adriano em Santa Catarina.</p>
   </div>
 </section>
 
