@@ -25,25 +25,6 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <!-- Utmify Pixel -->
-  <script>
-    window.pixelId = "6a3ca4596d5bb422b00df17c";
-    var a = document.createElement("script");
-    a.setAttribute("async", "");
-    a.setAttribute("defer", "");
-    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-    document.head.appendChild(a);
-  </script>
-
-  <!-- Utmify UTMs -->
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
-
   <!-- Cakto tracker -->
   <script src="https://api.cakto.com.br/api/product/checkout/tracker.js" async></script>
 
@@ -1109,9 +1090,13 @@
 
   (function () {
     // Botões de compra
+    // Repassa as UTMs do anúncio (utm_source, utm_campaign etc.) para o checkout da Cakto
     if (CHECKOUT_URL) {
+      const params = new URLSearchParams(location.search);
+      const url = new URL(CHECKOUT_URL);
+      params.forEach((v, k) => { if (/^(utm_|fbclid|src|sck)/.test(k)) url.searchParams.set(k, v); });
       document.querySelectorAll('[data-checkout]').forEach(a => {
-        a.href = CHECKOUT_URL;
+        a.href = url.toString();
         a.addEventListener('click', () => { if (window.fbq) fbq('track', 'InitiateCheckout'); });
       });
     }
