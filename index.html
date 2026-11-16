@@ -282,6 +282,9 @@
     .hero-headline .hl { display: inline-block; }
     #hero .lead { max-width: 700px; margin-left: auto; margin-right: auto; margin-top: clamp(18px, 3vw, 28px); }
     #hero .hero-photo { margin-top: clamp(24px, 4vw, 40px); }
+    .on-dark .before-after.mech-ba { margin: 24px 0 22px; max-width: 560px; }
+    .mech-ba .ba-item { aspect-ratio: 4 / 5; }
+    .pain-photo { max-width: 760px; margin: 0 auto clamp(24px, 4vw, 40px); }
 
     .before-after {
       position: relative;
@@ -638,6 +641,10 @@
     #footer .footer-inner { max-width: 760px; margin: 0 auto; }
     #footer strong { color: var(--ink); font-weight: 700; }
     #footer .footer-divider { height: 1px; background: var(--line); margin: 22px auto; }
+    #footer a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+    .aulas-mock { max-width: 300px; margin: 28px auto 8px; }
+    .aulas-mock img, .buy-mock { display: block; width: 100%; height: auto; }
+    .buy-mock { max-width: 440px; margin: -8px auto 18px; }
 
     /* ═════════════════════════════════════════════
        BARRA FLUTUANTE
@@ -744,7 +751,7 @@
     <p class="lead">Sem lavadora de pressão, sem quebrar telha e sem precisar de experiência.</p>
 
     <div class="hero-cta">
-      <a href="https://pay.cakto.com.br/3eb7w78_1260600" class="btn breathe" data-checkout>Quero assistir às aulas
+      <a href="#oferta" class="btn breathe">Quero assistir às aulas
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="btn-note"><span>R$67</span><span>·</span><span>Acesso na hora</span><span>·</span><span>7 dias de garantia</span></div>
@@ -760,6 +767,10 @@
     <div class="section-head">
       <span class="eyebrow red glass reveal"><span class="dot" aria-hidden="true"></span>Talvez você se reconheça em alguma dessas</span>
       <h2 class="title reveal d1">Trabalho pesado você já tem. O que falta é ele <span class="hl">pagar direito.</span></h2>
+    </div>
+
+    <div class="hero-photo pain-photo reveal">
+      <img src="ui/dor-contas.jpg" alt="Trabalhador cansado na mesa da cozinha, à noite, com a mão na testa olhando as contas do mês" width="1024" height="765" loading="lazy"/>
     </div>
 
     <div class="pain-grid">
@@ -783,16 +794,26 @@
       <div class="mech-copy">
         <span class="eyebrow glass-dark reveal"><span class="dot" aria-hidden="true"></span>Por que quase todo mundo faz errado</span>
         <h2 class="title reveal d1">A mancha preta do telhado é viva. <span class="hl">Jato de água não mata ela.</span></h2>
-        <p class="reveal d2">Aquela mancha escura que escorre pela telha é uma bactéria. A lavadora de alta pressão tira a sujeira de cima, mas a bactéria continua lá. Em 3 a 6 meses o telhado está preto de novo, e ainda sobra telha quebrada e risco de infiltração.</p>
-        <p class="reveal d2">O cliente acha que foi enganado. <strong>E quem limpou fica com fama de serviço ruim.</strong></p>
+        <div class="before-after mech-ba reveal d2">
+          <figure class="ba-item">
+            <img src="ui/telhado-antes-2.jpg" alt="Telhado escuro sendo limpo pelo Adriano, ainda no meio do serviço" width="900" height="1125" loading="lazy" decoding="async"/>
+            <figcaption class="ba-tag antes"><i aria-hidden="true"></i>Durante</figcaption>
+          </figure>
+          <figure class="ba-item">
+            <img src="ui/telhado-depois-2.jpg" alt="O mesmo telhado limpo, com as telhas claras, depois do serviço" width="900" height="1125" loading="lazy" decoding="async"/>
+            <figcaption class="ba-tag depois"><i aria-hidden="true"></i>Depois</figcaption>
+          </figure>
+        </div>
+
+        <p class="reveal d2">Essa mancha é uma bactéria. A lavadora só tira a sujeira de cima, e em poucos meses tá tudo preto de novo. <strong>E quem limpou fica com fama de serviço ruim.</strong></p>
 
         <h3 class="reveal">O Protocolo Telhado Lucrativo faz o contrário</h3>
-        <p class="reveal">Ele usa uma técnica que nasceu na Flórida, onde o clima úmido é parecido com o do litoral brasileiro. Em vez de força, ele acaba com a sujeira pela raiz. <strong>E o telhado vai clareando sozinho nas próximas 72 horas.</strong></p>
+        <p class="reveal">Acaba com a sujeira pela raiz, sem força. <strong>O telhado clareia sozinho em 72 horas.</strong></p>
       </div>
 
       <div class="vs glass-dark reveal d1">
         <div class="vs-head"><span></span><span>Lavadora de pressão</span><span class="us">Protocolo Telhado Lucrativo</span></div>
-        <div class="vs-row"><span class="k">Volta a sujar em</span><span class="bad">3 a 6 meses</span><span class="good">2 a 3 anos</span></div>
+        <div class="vs-row"><span class="k">Volta a sujar em</span><span class="bad">3 a 6 meses</span><span class="good">Até 2 anos</span></div>
         <div class="vs-row"><span class="k">Quebra telha</span>
           <span class="bad"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>Sim</span>
           <span class="good"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Não</span></div>
@@ -846,16 +867,17 @@
     <div class="aulas-grid single">
       <div>
         <span class="eyebrow glass reveal"><span class="dot" aria-hidden="true"></span>O que você recebe</span>
-        <h2 class="title reveal d1">5 aulas em vídeo, <span class="hl">gravadas em cima do telhado</span></h2>
-        <p class="lead reveal d2">Nada de estúdio nem enrolação. É o Adriano mostrando o que ele faz, do jeito que ele faz, gravado pelo filho com o celular.</p>
+        <h2 class="title reveal d1">5 aulas em vídeo, <span class="hl">direto ao ponto</span></h2>
+        <p class="lead reveal d2">Nada de estúdio nem enrolação. É o Adriano mostrando o que ele usa e como ele trabalha, gravado pelo filho com o celular.</p>
+        <div class="aulas-mock reveal d2"><img src="ui/mockup-aulas.png" alt="Celular mostrando a área de aulas do Protocolo Telhado Lucrativo, com a lista das 5 aulas" width="620" height="1040" loading="lazy" decoding="async"/></div>
 
         <p class="list-label reveal">Entre as aulas e o e-book, você vai ver:</p>
         <div class="learn-list">
-          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Por que a mancha preta volta, e como acabar com ela de vez</p></div>
-          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>O equipamento pra começar, e o que não vale a pena comprar</p></div>
-          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>O serviço completo, do chão ao telhado limpo</p></div>
-          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Onde achar os primeiros clientes na sua cidade</p></div>
-          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Segurança: o equipamento e as regras que evitam acidente</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>O equipamento, as ferramentas e o uniforme pra começar, e o que não vale a pena comprar</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Segurança: os EPIs, a escada certa e as regras pra trabalhar em altura</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>O passo a passo do serviço, da visita ao cliente até o telhado limpo</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Como fazer o orçamento, cobrar o preço certo e fechar o serviço</p></div>
+          <div class="learn-row reveal"><span class="check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9.5L7 13.5L15 5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Onde achar os primeiros clientes e um plano de 90 dias pra começar do zero</p></div>
         </div>
         <p class="aulas-note reveal">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -958,6 +980,7 @@
     </div>
 
     <div class="buy-box glass reveal d1">
+      <img class="buy-mock" src="ui/mockup-oferta.png" alt="E-book do Protocolo Telhado Lucrativo ao lado de um celular com as aulas em vídeo" width="1200" height="1040" loading="lazy" decoding="async"/>
       <div class="buy-name">Protocolo Telhado Lucrativo<span>Aulas em vídeo de limpeza de telhado</span></div>
 
       <div class="stack">
@@ -993,7 +1016,7 @@
     <div class="guarantee reveal">
       <div class="seal" aria-hidden="true"><b>7</b><span>dias</span></div>
       <div>
-        <h2>Assiste primeiro. <span class="hl">Decide depois.</span></h2>
+        <h2>Assiste primeiro.<br/><span class="hl">Decide depois.</span></h2>
         <p>Você tem 7 dias pra entrar, assistir às aulas e ver se é pra você. Se não for, é só pedir o reembolso que o dinheiro volta inteiro, sem pergunta e sem burocracia.</p>
       </div>
     </div>
@@ -1027,6 +1050,14 @@
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quanto preciso investir pra começar?<span class="faq-plus" aria-hidden="true"></span></button>
         <div class="faq-answer"><div><div class="faq-answer-inner">Bem menos do que montar a maioria dos negócios. Nas aulas o Adriano mostra o que você precisa pra começar e o que é dinheiro jogado fora.</div></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Preciso abrir empresa ou ter CNPJ?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Não pra começar. Dá pra fazer os primeiros serviços como autônomo e, quando o trabalho pegar, abrir um MEI se quiser emitir nota.</div></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Preciso de ajudante?<span class="faq-plus" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div><div class="faq-answer-inner">Pra subir no telhado, sim: a regra é nunca subir sozinho. Pode ser um parente ou um amigo pra ficar embaixo, segurar a escada e ajudar no serviço.</div></div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">É perigoso?<span class="faq-plus" aria-hidden="true"></span></button>
@@ -1066,6 +1097,9 @@
       Este site não é afiliado ao Facebook nem a qualquer entidade do Facebook.<br/>
       Os valores mostrados são médias do trabalho do Adriano e não são promessa de ganho. O resultado de cada pessoa depende do esforço, da dedicação e da região onde trabalha.
     </p>
+    <div class="footer-divider"></div>
+    <p>Dúvidas ou suporte: <a href="mailto:szerneknicolas@gmail.com">szerneknicolas@gmail.com</a></p>
+    <p><a href="politica-de-privacidade.html">Política de Privacidade</a> · <a href="termos-de-uso.html">Termos de Uso</a></p>
     <div class="footer-divider"></div>
     <p>Copyright © 2026 · Todos os direitos reservados.</p>
   </div>
